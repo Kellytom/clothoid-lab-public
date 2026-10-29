@@ -1,0 +1,47 @@
+[
+ {
+  "svg": "reference/fleur/svg/Blason-gueules-3-fleurs-de-lys-argent.svg",
+  "png": "reference/fleur/png/Blason-gueules-3-fleurs-de-lys-argent.png",
+  "size": [
+   900,
+   990
+  ],
+  "bbox": [
+   900,
+   990
+  ],
+  "aspect": 1.1,
+  "fill": 0.749,
+  "symmetry": 0.999
+ },
+ {
+  "svg": "reference/fleur/svg/Blason-gueules-3-fleurs-de-lys-or.svg",
+  "png": "reference/fleur/png/Blason-gueules-3-fleurs-de-lys-or.png",
+  "size": [
+   900,
+   990
+  ],
+  "bbox": [
+   900,
+   990
+  ],
+  "aspect": 1.1,
+  "fill": 0.75,
+  "symmetry": 0.999
+ },
+ {
+  "svg": "reference/fleur/svg/Fleur_de_lys__or_.svg",
+  "png": "reference/fleur/png/Fleur_de_lys__or_.png",
+  "size": [
+   900,
+   1263
+  ],
+  "bbox": [
+   844,
+   1205
+  ],
+  "aspect": 1.428,
+  "fill": 0.173,
+  "symmetry": 0.825
+ }
+]

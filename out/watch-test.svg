@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="79.0968mm" height="79.0968mm"
+     viewBox="0 0 79.0968 79.0968">
+  <title>bracket 90 deg</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;bracket 90 deg&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0.0,
+    &quot;y&quot;: 0.0,
+    &quot;angle&quot;: 0.0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 0.0,
+      &quot;length&quot;: 12.0,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: 0.0008726646259971648,
+      &quot;length&quot;: 30.0,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: 0.0,
+      &quot;length&quot;: 29.999999999999996,
+      &quot;kappa0&quot;: 0.026179938779914945
+    },
+    {
+      &quot;kd&quot;: -0.0008726646259971648,
+      &quot;length&quot;: 30.0,
+      &quot;kappa0&quot;: 0.026179938779914945
+    },
+    {
+      &quot;kd&quot;: 0.0,
+      &quot;length&quot;: 12.0,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.8
+}</desc>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.8">
+    <path id="spine" d="M 5,8 C 9 8, 13 8, 17 8 C 26.9742 8, 37.2058 8.0173, 46.5407 11.8839 C 55.9 15.7607, 63.336 23.1967, 67.2128 32.5561 C 71.0795 41.891, 71.0968 52.1226, 71.0968 62.0968 C 71.0968 66.0968, 71.0968 70.0968, 71.0968 74.0968"/>
+    <path id="rail-1" d="M 5,11 C 9 11, 13 11, 17 11 C 26.5815 11, 36.4205 10.9392, 45.3926 14.6556 C 54.0169 18.2279, 60.8689 25.0799, 64.4412 33.7042 C 68.1576 42.6763, 68.0968 52.5152, 68.0968 62.0968 C 68.0968 66.0968, 68.0968 70.0968, 68.0968 74.0968"/>
+    <path id="rail-2" d="M 5,5 C 9 5, 13 5, 17 5 C 27.3669 5, 37.991 5.0954, 47.6887 9.1123 C 57.7832 13.2936, 65.8032 21.3136, 69.9845 31.4081 C 74.0014 41.1058, 74.0968 51.7298, 74.0968 62.0968 C 74.0968 66.0968, 74.0968 70.0968, 74.0968 74.0968"/>
+  </g>
+</svg>

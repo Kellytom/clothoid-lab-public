@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.737658"
+     inkscape:cx="100"
+     inkscape:cy="125"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title>cap-9</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;cap-9&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 6.08097981987e-05,
+      &quot;length&quot;: 401.64324063656653,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: -0.0006451161003100285,
+      &quot;length&quot;: 73.93535890080955,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: 0.0,
+      &quot;length&quot;: 50.0,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5,
+  &quot;g1&quot;: true
+}</desc>
+  <g id="annotation-lines">
+    <line x1="7.9468" y1="207.5263" x2="185.4329" y2="207.5263" stroke="#bdbdbd" stroke-width="0.25"/>
+    <line x1="7.9468" y1="207.5263" x2="7.9468" y2="45.165" stroke="#bdbdbd" stroke-width="0.25"/>
+  </g>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 7.9468,207.5263 C 41.3645 207.5263, 75.3069 207.4987, 107.4181 197.3346 C 123.4028 192.2749, 138.5881 184.7519, 151.5536 174.0566 C 164.5191 163.3613, 174.9062 149.7223, 180.6036 133.848 C 186.3009 117.9738, 186.9553 100.5788, 181.2233 84.6366 C 175.4914 68.6947, 163.6763 55.465, 147.8732 49.105 C 132.0708 42.7452, 113.9907 44.1592, 99.9723 54.0338 C 85.9549 63.9076, 78.3771 80.8956, 81.6819 97.8554 C 84.031 109.9111, 86.427 122.365, 83.3581 134.4665 C 81.8377 140.4617, 78.9789 146.101, 74.5219 150.435 C 70.0651 154.7689, 64.2086 157.5263, 57.9468 157.5263 C 41.2802 157.5263, 24.6135 157.5263, 7.9468 157.5263"/>
+    <path id="rail-1" d="M 7.9468,202.5263 C 40.8536 202.5263, 74.2851 202.5776, 105.9093 192.5677 C 121.2832 187.7013, 135.9005 180.4872, 148.372 170.1995 C 160.6436 160.0766, 170.5039 147.1868, 175.8975 132.1589 C 181.2027 117.3775, 181.8574 101.1781, 176.5182 86.3283 C 171.2688 71.7284, 160.4866 59.5711, 146.0064 53.7434 C 131.7769 48.0166, 115.484 49.2233, 102.8517 58.1215 C 90.445 66.8607, 83.6616 81.8732, 86.5896 96.8991 C 87.8029 103.1257, 89.0084 109.3665, 89.53 115.695 C 90.082 122.3907, 89.8608 129.165, 88.2047 135.6955 C 86.4572 142.5864, 83.1271 149.0414, 78.0077 154.0196 C 72.6177 159.261, 65.5102 162.5263, 57.9468 162.5263 C 41.2802 162.5263, 24.6135 162.5263, 7.9468 162.5263"/>
+    <path id="rail-2" d="M 7.9468,212.5263 C 41.8755 212.5263, 76.3287 212.4198, 108.927 202.1015 C 125.5223 196.8485, 141.2757 189.0165, 154.7353 177.9136 C 168.3946 166.646, 179.3084 152.2579, 185.3097 135.537 C 191.3992 118.5702, 192.0532 99.9796, 185.9284 82.9449 C 179.714 65.6611, 166.866 51.359, 149.74 44.4665 C 132.3647 37.4737, 112.4975 39.0952, 97.0929 49.9461 C 81.4648 60.9545, 73.0926 79.9181, 76.7742 98.8117 C 77.9172 104.6777, 79.0724 110.5541, 79.5638 116.5165 C 80.0251 122.1117, 79.8962 127.7772, 78.5115 133.2374 C 77.2182 138.337, 74.8307 143.1605, 71.0362 146.8504 C 67.5124 150.277, 62.9072 152.5263, 57.9468 152.5263 C 41.2802 152.5263, 24.6135 152.5263, 7.9468 152.5263"/>
+  </g>
+  <g id="annotations">
+    <text x="187.0329" y="206.1263" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">x</text>
+    <text x="9.7468" y="42.565" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">y</text>
+    <text x="6.3468" y="206.1263" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="end">0</text>
+    <line x1="81.6819" y1="97.8554" x2="95.6819" y2="83.8554" stroke="#9a9a9a" stroke-width="0.2" stroke-dasharray="1.2 1.2"/>
+    <circle cx="81.6819" cy="97.8554" r="1.2" fill="#333333"/>
+    <text x="97.2819" y="82.8554" font-family="Helvetica, Arial, sans-serif" font-size="4" fill="#333333" text-anchor="start">inflection</text>
+    <line x1="9.9468" y1="147.5263" x2="32.9468" y2="157.5263" stroke="#9a9a9a" stroke-width="0.2" stroke-dasharray="1.2 1.2"/>
+    <text x="9.9468" y="144.5263" font-family="Helvetica, Arial, sans-serif" font-size="3.4" fill="#555555" text-anchor="start">added straight to x=0</text>
+  </g>
+</svg>

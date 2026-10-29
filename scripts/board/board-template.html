@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>clothoid ornament board</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f6f1e4;
+    --card: #fffdf7;
+    --ink: #2e2413;
+    --muted: #7b6c4e;
+    --gold: #8c6a21;
+    --line: #d8ccae;
+    --accent: #b23a2b;
+    --good: #2f6f4e;
+    --field: #fbf8ee;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --serif: "EB Garamond", Georgia, "Palatino Linotype", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; }
+  body {
+    background:
+      radial-gradient(1100px 520px at 12% -8%, #fcf9ef 0, transparent 60%),
+      var(--paper);
+    color: var(--ink);
+    font: 15px/1.45 var(--serif);
+  }
+  header {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 22px 14px;
+    border-bottom: 2px solid var(--ink);
+  }
+  h1 { font-size: 26px; font-weight: 600; margin: 0 0 4px; letter-spacing: 0.01em; }
+  .lead { margin: 0; color: var(--gold); font-size: 15px; max-width: 70ch; }
+  .backrow { margin: 0 0 8px; }
+  .backrow a, .subpage a { color: var(--gold); font: 12px/1.4 var(--mono); text-decoration: underline; text-underline-offset: 3px; }
+  .subpage { margin: 12px 0 0; font-size: 14px; }
+  .subpage a { font-size: 13px; }
+  .groupwrap { display: flex; align-items: center; gap: 6px; }
+  .legend { margin: 10px 0 0; font: 11px/1.6 var(--mono); color: var(--muted); }
+  .legend b { color: var(--ink); }
+  .toolbar {
+    position: sticky; top: 0; z-index: 20;
+    max-width: 1180px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    padding: 10px 22px;
+    background: rgba(246, 241, 228, 0.96);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+  }
+  .toolbar label { font: 10px/1 var(--mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  select, button, input {
+    font: 12px/1 var(--mono);
+    color: var(--ink);
+    background: var(--field);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 8px 9px;
+    min-height: 34px;
+  }
+  button { cursor: pointer; }
+  button:hover { border-color: var(--ink); }
+  button:active { transform: translateY(1px); }
+  button.primary { background: var(--ink); color: #fbf8ef; border-color: var(--ink); }
+  .spacer { flex: 1; }
+  .count { font: 11px/1 var(--mono); color: var(--muted); white-space: nowrap; }
+  main { max-width: 1180px; margin: 0 auto; padding: 18px 22px 70px; }
+  .summary {
+    display: flex; flex-wrap: wrap; gap: 14px 26px;
+    padding: 14px 16px; margin: 0 0 18px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+  }
+  .definitions { margin: 0 0 18px; }
+  .definitions > summary {
+    cursor: pointer; font: 600 11px/1.2 var(--mono);
+    letter-spacing: .10em; text-transform: uppercase; color: var(--muted);
+    padding: 8px 0;
+  }
+  .definition-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px; margin-top: 8px;
+  }
+  .def {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 5px; padding: 11px 12px;
+  }
+  .def b {
+    display: block; font: 600 12px/1.2 var(--mono);
+    letter-spacing: .04em; color: var(--ink); margin-bottom: 4px;
+  }
+  .def p { margin: 0; font-size: 13px; line-height: 1.5; color: #4a4335; }
+  .summary h2 { margin: 0 0 4px; font: 600 10px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .summary p { margin: 0; }
+  .nextchips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font: 11px/1 var(--mono); padding: 5px 7px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--field);
+  }
+  .chip b { color: var(--gold); font-weight: 600; }
+  .decisions { margin: 0 0 18px; }
+  .decisions > summary {
+    cursor: pointer; font: 600 11px/1.2 var(--mono);
+    letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+    padding: 8px 0;
+  }
+  .decision-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+  .decision {
+    background: var(--card); border: 1px solid var(--line); border-radius: 5px; padding: 12px;
+  }
+  .decision .did { font: 10px/1 var(--mono); color: var(--gold); letter-spacing: .08em; }
+  .decision h3 { margin: 5px 0 2px; font-size: 15px; }
+  .decision p { margin: 0 0 8px; font: 12px/1.45 var(--serif); color: var(--muted); }
+  .decision .opts { display: flex; flex-wrap: wrap; gap: 5px; }
+  .decision .opt {
+    font: 11px/1 var(--mono); padding: 6px 8px; min-height: 30px;
+    background: var(--field); border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  }
+  .decision .opt[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fbf8ef; }
+  .board { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .groupbrief {
+    background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+    padding: 14px 16px; margin: 0 0 14px;
+  }
+  .groupbrief h2 { margin: 0 0 6px; font-size: 16px; font-weight: 600; }
+  .groupbrief p { margin: 0; font-size: 14px; line-height: 1.55; color: #4a4335; max-width: 95ch; }
+  .card {
+    display: flex; flex-direction: column;
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+    padding: 10px; position: relative;
+    scroll-margin-top: 64px;
+  }
+  .card.dragging { opacity: .45; }
+  .card.drop-target { outline: 2px dashed var(--gold); outline-offset: 2px; }
+  .card-top { display: flex; align-items: center; gap: 7px; }
+  .pid {
+    font: 10px/1 var(--mono); letter-spacing: .08em; color: var(--gold);
+    border: 1px solid var(--line); border-radius: 3px; padding: 4px 5px; background: var(--field);
+  }
+  .kind { font: 10px/1 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .grab { margin-left: auto; cursor: grab; color: var(--muted); font: 13px/1 var(--mono); padding: 2px 4px; }
+  .moves { display: flex; gap: 3px; }
+  .moves button { min-height: 28px; padding: 4px 7px; font-size: 13px; line-height: 1; }
+  .thumb {
+    display: block; width: 100%; margin: 8px 0 2px; padding: 4px;
+    background: #fff; border: 1px solid var(--line); border-radius: 4px;
+    cursor: zoom-in; overflow: hidden;
+  }
+  .thumb svg { display: block; width: 100%; height: auto; max-height: 320px; }
+  .card h3 { margin: 7px 0 2px; font-size: 16px; font-weight: 600; line-height: 1.25; }
+  .note { margin: 0 0 5px; font-size: 13px; color: #5a4a28; }
+  .note-edit {
+    width: 100%; margin: 0 0 3px; padding: 5px 6px;
+    border: 1px dashed transparent; border-radius: 4px;
+    background: transparent; color: #5a4a28;
+    font: 13px/1.45 var(--serif);
+    min-height: 76px; max-height: 280px; overflow: auto;
+    resize: vertical;
+  }
+  .note-edit:hover { border-color: var(--line); }
+  .note-edit:focus { border-color: var(--gold); background: var(--field); outline: none; }
+  .note-reset {
+    align-self: flex-start; border: 0; background: none; padding: 0 0 3px;
+    color: var(--gold); font: 10px/1 var(--mono); cursor: pointer;
+    text-decoration: underline; text-underline-offset: 2px;
+  }
+  .stats { margin: 0 0 7px; font: 10px/1.5 var(--mono); color: var(--muted); }
+  .row { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .rowlabel { font: 9px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); width: 44px; flex: none; }
+  .seg { display: flex; flex-wrap: wrap; gap: 3px; }
+  .seg button {
+    min-height: 30px; min-width: 30px; padding: 5px 7px;
+    font: 11px/1 var(--mono); border-radius: 4px;
+  }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: #fbf8ef; border-color: var(--ink); }
+  .seg button.stage[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); }
+  .seg button.stage.foundational[aria-pressed="true"] { background: var(--good); border-color: var(--good); }
+  .seg button.stage.finished[aria-pressed="true"] { background: #55503f; border-color: #55503f; }
+  .memo {
+    width: 100%; margin-top: 8px; padding: 7px 8px; min-height: 32px;
+    font: 12px/1.3 var(--serif); background: var(--field); border: 1px solid var(--line); border-radius: 4px;
+  }
+  .carddetails { margin-top: 5px; }
+  .carddetails summary { cursor: pointer; font: 10px/1 var(--mono); color: var(--gold); }
+  .carddetails pre {
+    white-space: pre-wrap; font: 10px/1.45 var(--mono); color: var(--muted);
+    max-height: 180px; overflow: auto; margin: 6px 0 0;
+    padding: 8px; background: var(--field); border: 1px solid var(--line); border-radius: 4px;
+  }
+  .empty { padding: 30px; text-align: center; color: var(--muted); }
+  dialog {
+    width: min(920px, 94vw); max-height: 92vh; padding: 0;
+    border: 1px solid var(--line); border-radius: 6px; background: var(--card);
+    color: var(--ink);
+  }
+  dialog::backdrop { background: rgba(30, 24, 14, .45); }
+  .dlg-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .dlg-head h2 { margin: 0; font-size: 18px; }
+  .dlg-head button { margin-left: auto; }
+  .dlg-body { padding: 14px; overflow: auto; max-height: calc(92vh - 60px); }
+  .dlg-body .art svg { width: 100%; height: auto; background: #fff; border: 1px solid var(--line); }
+  .dlg-body .note { font-size: 15px; }
+  .dlg-body pre { white-space: pre-wrap; font: 11px/1.5 var(--mono); background: var(--field); border: 1px solid var(--line); padding: 10px; overflow: auto; }
+  .orderbox { width: 100%; min-height: 260px; font: 11px/1.6 var(--mono); white-space: pre; }
+  .toast {
+    position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%) translateY(20px);
+    opacity: 0; pointer-events: none; transition: .18s ease;
+    background: var(--ink); color: #fbf8ef; font: 12px/1 var(--mono);
+    padding: 10px 14px; border-radius: 4px; z-index: 50;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  @media (max-width: 560px) {
+    header { padding: 22px 14px 12px; }
+    h1 { font-size: 22px; }
+    .toolbar { padding: 8px 14px; }
+    main { padding: 14px 14px 80px; }
+    .board { grid-template-columns: 1fr; }
+    .summary { padding: 12px; }
+  }
+  @media print {
+    .toolbar, .summary, .decisions, .moves, .grab, .row, .memo, .carddetails, .toast { display: none !important; }
+    body { background: #fff; }
+    header { border-bottom: 1px solid #000; }
+    .board { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .card { break-inside: avoid; border-color: #999; }
+    .thumb svg { max-height: 240px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <p style="margin:0 0 8px;font:12px ui-monospace,Menlo,monospace">
+    <a href="principles.html" style="color:#8c6a21">Principle cards →</a></p>
+  <p class="backrow"><a id="backlink" hidden></a></p>
+  <h1 id="title">clothoid ornament board</h1>
+  <p class="lead" id="lead"></p>
+  <p class="legend" id="legend"></p>
+  <p class="subpage" id="subpage" hidden><a id="subpage-link"></a></p>
+</header>
+
+<div class="toolbar">
+  <span class="groupwrap" id="groupwrap">
+    <label for="group">Group</label>
+    <select id="group"></select>
+  </span>
+  <label for="sort">Sort</label>
+  <select id="sort">
+    <option value="deepseek">DeepSeek pick</option>
+    <option value="manual">Manual</option>
+    <option value="priority">Priority</option>
+    <option value="stage">Stage</option>
+  </select>
+  <span class="spacer"></span>
+  <span class="count" id="count"></span>
+  <button id="copy" class="primary">Copy order</button>
+  <button id="export">Export JSON</button>
+  <label class="chip" style="cursor:pointer; min-height:34px">Import
+    <input id="import" type="file" accept="application/json,.json" hidden>
+  </label>
+  <button id="reset">Reset</button>
+</div>
+
+<main>
+  <details class="definitions">
+    <summary>Words used on this board — open this if a term is unfamiliar</summary>
+    <div class="definition-grid" id="definitiongrid"></div>
+  </details>
+
+  <section class="summary" aria-label="summary">
+    <div>
+      <h2>Next up</h2>
+      <div class="nextchips" id="next"></div>
+    </div>
+    <div id="decisionblock">
+      <h2>Decisions</h2>
+      <p id="decisionsummary" style="font:12px/1.5 var(--mono); color:var(--muted)"></p>
+    </div>
+  </section>
+
+  <details class="decisions">
+    <summary>Design decisions — click one option per line</summary>
+    <div class="decision-grid" id="decisiongrid"></div>
+  </details>
+
+  <section class="groupbrief" id="groupbrief" aria-live="polite"></section>
+
+  <section class="board" id="board" aria-live="polite"></section>
+</main>
+
+<dialog id="lightbox">
+  <div class="dlg-head">
+    <span class="pid" id="dlgid"></span>
+    <h2 id="dlgtitle"></h2>
+    <button id="dlgclose" type="button">Close</button>
+  </div>
+  <div class="dlg-body" id="dlgbody"></div>
+</dialog>
+
+<dialog id="orderdialog">
+  <div class="dlg-head">
+    <h2>Order</h2>
+    <button id="ordercopy" class="primary" type="button">Copy</button>
+    <button id="orderclose" type="button">Close</button>
+  </div>
+  <div class="dlg-body">
+    <p style="margin-top:0; color:var(--muted); font:12px/1.5 var(--mono)">Paste this into the session. It keeps the labels and the decisions.</p>
+    <textarea id="ordertext" class="orderbox" spellcheck="false"></textarea>
+  </div>
+</dialog>
+
+<div class="toast" id="toast"></div>
+
+<script type="application/json" id="seed">__DATA__</script>
+<script>
+(() => {
+  "use strict";
+
+  const DATA = JSON.parse(document.getElementById("seed").textContent);
+  const KEY = DATA.storageKey;
+  const VERSION = DATA.version;
+  const STAGES = [
+    ["foundational", "Foundational"],
+    ["reopened", "Reopened"],
+    ["sketch", "Sketch"],
+    ["finished", "Finished"],
+  ];
+  const PRIORITY_WORDS = { 1: "next", 2: "high", 3: "medium", 4: "low", 5: "someday" };
+  const $ = (sel) => document.querySelector(sel);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[c]));
+
+  const defaults = () => Object.fromEntries(DATA.decisions.map((d) => [d.id, d.default]));
+
+  function seedState() {
+    return {
+      version: VERSION,
+      sort: "deepseek",
+      group: "all",
+      decisions: defaults(),
+      items: DATA.items.map((item, index) => ({
+        id: item.id,
+        priority: null,
+        stage: DATA.mode === "fleur"
+          ? "sketch"
+          : (item.kind === "work" && item.id === "W02"
+            ? "reopened"
+            : (item.kind === "work" && ["W01", "W11", "W12"].includes(item.id)
+              ? "finished"
+              : (item.kind === "work" && ["W01", "W03", "W04"].includes(item.id)
+                ? "foundational" : null))),
+        noteEdit: "",
+        order: index,
+      })),
+    };
+  }
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (!raw) return seedState();
+      const saved = JSON.parse(raw);
+      if (!saved || saved.version !== VERSION || !Array.isArray(saved.items)) return seedState();
+      const byId = new Map(saved.items.map((it) => [it.id, it]));
+      const items = DATA.items.map((item, index) => {
+        const old = byId.get(item.id);
+        return {
+          id: item.id,
+          priority: Number.isInteger(old?.priority) ? old.priority : null,
+          stage: STAGES.some(([s]) => s === old?.stage) ? old.stage : null,
+          noteEdit: typeof old?.noteEdit === "string" ? old.noteEdit : "",
+          order: Number.isFinite(old?.order) ? old.order : index,
+        };
+      }).sort((a, b) => a.order - b.order).map((it, i) => ({ ...it, order: i }));
+      return {
+        version: VERSION,
+        sort: ["deepseek", "manual", "priority", "stage"].includes(saved.sort) ? saved.sort : "deepseek",
+        group: DATA.groups.some((g) => g.value === saved.group) ? saved.group : "all",
+        decisions: { ...defaults(), ...(saved.decisions || {}) },
+        items,
+      };
+    } catch {
+      return seedState();
+    }
+  }
+
+  let state = loadState();
+  const itemById = new Map(DATA.items.map((item) => [item.id, item]));
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* file:// may refuse */ }
+  }
+
+  function toast(message) {
+    const el = $("#toast");
+    el.textContent = message;
+    el.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => el.classList.remove("show"), 1600);
+  }
+
+  function stageRank(entry) {
+    const index = STAGES.findIndex(([value]) => value === entry.stage);
+    return index < 0 ? 99 : index;
+  }
+
+  function visibleItems() {
+    let list = state.items.filter((it) => {
+      const item = itemById.get(it.id);
+      if (state.group === "all") return true;
+      if (state.group === "plates") return item.kind === "plate";
+      if (state.group === "work") return item.kind === "work";
+      return item.group === state.group;
+    });
+    if (state.sort === "deepseek") {
+      list = list.slice().sort((a, b) =>
+        (itemById.get(a.id).pick ?? 999) - (itemById.get(b.id).pick ?? 999) ||
+        a.order - b.order);
+    } else if (state.sort === "priority") {
+      list = list.slice().sort((a, b) =>
+        (a.priority ?? 99) - (b.priority ?? 99) || a.order - b.order);
+    } else if (state.sort === "stage") {
+      list = list.slice().sort((a, b) =>
+        stageRank(a) - stageRank(b) ||
+        (a.priority ?? 99) - (b.priority ?? 99) ||
+        a.order - b.order);
+    } else {
+      list = list.slice().sort((a, b) => a.order - b.order);
+    }
+    return list;
+  }
+
+  function renderDecisions() {
+    $("#decisiongrid").innerHTML = DATA.decisions.map((d) => `
+      <div class="decision" data-decision="${d.id}">
+        <div class="did">${d.id}</div>
+        <h3>${esc(d.title)}</h3>
+        <p>${esc(d.note)}</p>
+        <div class="opts">
+          ${d.options.map((o) => `
+            <button class="opt" type="button" data-opt="${esc(o.value)}"
+              aria-pressed="${state.decisions[d.id] === o.value}">${esc(o.label)}</button>
+          `).join("")}
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function thumbMarkup(item) {
+    if (item.svg) return item.svg;
+    return item.icon || `<div style="padding:40px;text-align:center;color:var(--muted);font:12px var(--mono)">no image</div>`;
+  }
+
+  function priorityButtons(id) {
+    const item = state.items.find((it) => it.id === id);
+    return [1, 2, 3, 4, 5].map((n) => `
+      <button type="button" data-priority="${n}" data-id="${id}"
+        title="${PRIORITY_WORDS[n]}"
+        aria-pressed="${item.priority === n}">${n}</button>
+    `).join("");
+  }
+
+  function stageButtons(id) {
+    const item = state.items.find((it) => it.id === id);
+    const stages = DATA.mode === "fleur"
+      ? STAGES.filter(([value]) => value !== "foundational")
+      : STAGES;
+    return stages.map(([value, label]) => {
+      const text = DATA.mode === "fleur"
+        ? (value === "sketch" ? "Needs work" : "Ready")
+        : label;
+      return `
+      <button type="button" class="stage ${value}" data-stage="${value}" data-id="${id}"
+        aria-pressed="${item.stage === value}">${text}</button>
+    `;
+    }).join("");
+  }
+
+  function cardMarkup(entry) {
+    const item = itemById.get(entry.id);
+    const stats = item.nums ? `<p class="stats">${esc(item.nums).replace(/\n/g, " · ")}</p>` : "";
+    const prompt = item.prompt
+      ? `<details class="carddetails"><summary>prompt &amp; numbers</summary><pre>${esc(item.prompt)}</pre></details>`
+      : "";
+    return `
+      <article class="card" data-id="${entry.id}">
+        <div class="card-top">
+          <span class="pid">${entry.id}</span>
+          <span class="kind">${esc(item.groupLabel || (item.kind === "plate" ? "plate" : "work"))}</span>
+          <span class="grab" draggable="true" title="drag to reorder">⋮⋮</span>
+          <div class="moves">
+            <button type="button" data-move="-1" data-id="${entry.id}" title="move up" aria-label="move up">↑</button>
+            <button type="button" data-move="1" data-id="${entry.id}" title="move down" aria-label="move down">↓</button>
+          </div>
+        </div>
+        <button class="thumb" type="button" data-open="${entry.id}" aria-label="open ${esc(item.title)}">
+          ${thumbMarkup(item)}
+        </button>
+        <h3>${esc(item.title)}</h3>
+        <textarea class="note-edit" data-note="${entry.id}" spellcheck="false"
+          draggable="false" aria-label="brief for ${entry.id}">${esc(entry.noteEdit || item.note)}</textarea>
+        <button class="note-reset" type="button" data-reset-note="${entry.id}"
+          ${entry.noteEdit ? "" : "hidden"}>reset text</button>
+        ${stats}
+        <div class="row">
+          <span class="rowlabel">Priority</span>
+          <div class="seg">${priorityButtons(entry.id)}</div>
+        </div>
+        <div class="row">
+          <span class="rowlabel">Stage</span>
+          <div class="seg">${stageButtons(entry.id)}</div>
+        </div>
+        ${prompt}
+      </article>
+    `;
+  }
+
+  function sizeNote(el) {
+    if (!el) return;
+    el.style.height = "auto";
+    const height = Math.min(el.scrollHeight, 280);
+    el.style.height = height + "px";
+    el.style.overflow = el.scrollHeight > 280 ? "auto" : "hidden";
+  }
+
+  function renderBoard() {
+    const list = visibleItems();
+    $("#board").innerHTML = list.length
+      ? list.map(cardMarkup).join("")
+      : `<p class="empty">Nothing in this filter.</p>`;
+    const plates = state.items.filter((it) => itemById.get(it.id).kind === "plate").length;
+    const work = state.items.filter((it) => itemById.get(it.id).kind === "work").length;
+    const ranked = state.items.filter((it) => it.priority !== null).length;
+    if (DATA.mode === "fleur") {
+      const need = state.items.filter((it) => it.stage === "sketch").length;
+      const ready = state.items.filter((it) => it.stage === "finished").length;
+      $("#count").textContent = `${plates} studies · ${need} need work · ${ready} ready`;
+    } else {
+      $("#count").textContent = `${plates} plates · ${work} work · ${ranked} ranked`;
+    }
+    document.querySelectorAll(".note-edit").forEach(sizeNote);
+  }
+
+  function renderSummary() {
+    const ranked = state.items
+      .filter((it) => it.priority !== null)
+      .sort((a, b) => a.priority - b.priority || a.order - b.order)
+      .slice(0, 8);
+    $("#next").innerHTML = ranked.length
+      ? ranked.map((it) => `<span class="chip"><b>${it.id}</b> ${esc(itemById.get(it.id).title)}</span>`).join("")
+      : `<span class="chip" style="color:var(--muted)">No priorities yet — click 1–5 on a card.</span>`;
+    $("#decisionsummary").textContent = DATA.decisions
+      .map((d) => {
+        const value = state.decisions[d.id];
+        const option = d.options.find((o) => o.value === value);
+        return `${d.id} ${option ? option.label : "—"}`;
+      })
+      .join(" · ");
+  }
+
+  function renderGroupBrief() {
+    const key = DATA.mode === "fleur"
+      ? "fleur-studies"
+      : (state.group === "plates" ? "all" : state.group);
+    const brief = (DATA.groupBriefs || {})[key] || (DATA.groupBriefs || {}).all;
+    if (!brief) {
+      $("#groupbrief").hidden = true;
+      return;
+    }
+    $("#groupbrief").hidden = false;
+    $("#groupbrief").innerHTML = `<h2>${esc(brief.title)}</h2><p>${esc(brief.text)}</p>`;
+  }
+
+  function renderChrome() {
+    $("#group").innerHTML = DATA.groups
+      .map((g) => `<option value="${esc(g.value)}">${esc(g.label)}</option>`)
+      .join("");
+    $("#group").value = state.group;
+    $("#sort").value = state.sort;
+  }
+
+  function renderAll() {
+    renderChrome();
+    renderDecisions();
+    renderBoard();
+    renderSummary();
+    renderGroupBrief();
+  }
+
+  function setPriority(id, value) {
+    const entry = state.items.find((it) => it.id === id);
+    entry.priority = entry.priority === value ? null : value;
+    save();
+    if (state.sort === "manual" || state.sort === "stage") {
+      syncCard(id);
+    } else {
+      renderBoard();
+    }
+    renderSummary();
+  }
+
+  function setStage(id, value) {
+    const entry = state.items.find((it) => it.id === id);
+    entry.stage = entry.stage === value ? null : value;
+    save();
+    if (state.sort === "manual" || state.sort === "priority") {
+      syncCard(id);
+    } else {
+      renderBoard();
+    }
+    renderSummary();
+  }
+
+  function syncCard(id) {
+    const card = document.querySelector(`.card[data-id="${id}"]`);
+    const entry = state.items.find((it) => it.id === id);
+    if (!card || !entry) return;
+    card.querySelectorAll("[data-priority]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(Number(button.dataset.priority) === entry.priority));
+    });
+    card.querySelectorAll("[data-stage]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.stage === entry.stage));
+    });
+  }
+
+  function move(id, direction) {
+    const visible = visibleItems().map((it) => it.id);
+    const vIndex = visible.indexOf(id);
+    if (vIndex < 0) return;
+    const nextVisible = visible[vIndex + direction];
+    if (!nextVisible) return;
+    const from = state.items.findIndex((it) => it.id === id);
+    const to = state.items.findIndex((it) => it.id === nextVisible);
+    const [entry] = state.items.splice(from, 1);
+    state.items.splice(to, 0, entry);
+    state.items.forEach((it, i) => { it.order = i; });
+    state.sort = "manual";
+    save(); renderChrome(); renderBoard();
+  }
+
+  function openLightbox(id) {
+    const item = itemById.get(id);
+    const entry = state.items.find((it) => it.id === id);
+    const note = entry?.noteEdit || item.note;
+    $("#dlgid").textContent = id;
+    $("#dlgtitle").textContent = item.title;
+    const stats = item.nums ? `<p class="stats" style="font-size:11px">${esc(item.nums).replace(/\n/g, "<br>")}</p>` : "";
+    const prompt = item.prompt ? `<h3 style="margin-top:18px">Prompt</h3><pre>${esc(item.prompt)}</pre>` : "";
+    $("#dlgbody").innerHTML = `
+      <div class="art">${thumbMarkup(item)}</div>
+      <p class="note">${esc(note)}</p>
+      ${stats}
+      ${prompt}
+    `;
+    $("#lightbox").showModal();
+  }
+
+  function orderText() {
+    const lines = [];
+    lines.push(DATA.title);
+    lines.push(`exported ${new Date().toISOString().slice(0, 10)}`);
+    if (DATA.decisions.length) {
+      lines.push("");
+      lines.push("DECISIONS");
+      for (const d of DATA.decisions) {
+        const value = state.decisions[d.id];
+        const option = d.options.find((o) => o.value === value);
+        lines.push(`${d.id}  ${d.title}: ${option ? option.label : "—"}`);
+      }
+    }
+    lines.push("");
+    lines.push("ORDER");
+    visibleItems().forEach((it, index) => {
+      const item = itemById.get(it.id);
+      const priority = it.priority ? `p${it.priority}` : "p—";
+      const stage = it.stage || "—";
+      lines.push(`${String(index + 1).padStart(2, "0")}. ${it.id}  [${priority} · ${stage}]  ${item.title}`);
+      if (it.noteEdit) lines.push(`      ${it.noteEdit}`);
+    });
+    return lines.join("\n");
+  }
+
+  function downloadJSON() {
+    const payload = {
+      version: VERSION,
+      exported: new Date().toISOString(),
+      decisions: state.decisions,
+      items: state.items.map((it) => {
+        const item = itemById.get(it.id);
+        return { ...it, title: item.title };
+      }),
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = DATA.exportName || "ornament-board.json";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast("JSON exported");
+  }
+
+  function importJSON(file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const payload = JSON.parse(String(reader.result));
+        if (!Array.isArray(payload.items)) throw new Error("items missing");
+        const byId = new Map(payload.items.map((it) => [it.id, it]));
+        const items = DATA.items.map((item, index) => {
+          const old = byId.get(item.id);
+          return {
+            id: item.id,
+            priority: Number.isInteger(old?.priority) ? old.priority : null,
+            stage: STAGES.some(([s]) => s === old?.stage) ? old.stage : null,
+            noteEdit: typeof old?.noteEdit === "string" ? old.noteEdit : "",
+            order: Number.isFinite(old?.order) ? old.order : index,
+          };
+        }).sort((a, b) => a.order - b.order).map((it, i) => ({ ...it, order: i }));
+        state = {
+          version: VERSION,
+          sort: state.sort,
+          group: state.group,
+          decisions: { ...defaults(), ...(payload.decisions || {}) },
+          items,
+        };
+        save(); renderAll(); toast("Imported");
+      } catch (error) {
+        toast("Import failed: " + error.message);
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  // Delegated interactions
+  document.addEventListener("click", (event) => {
+    const target = event.target.closest("button");
+    if (!target) return;
+    const resetNote = target.dataset.resetNote;
+    if (resetNote) {
+      const entry = state.items.find((it) => it.id === resetNote);
+      const item = itemById.get(resetNote);
+      entry.noteEdit = "";
+      save();
+      const card = target.closest(".card");
+      const note = card.querySelector(".note-edit");
+      if (note) {
+        note.value = item.note;
+        sizeNote(note);
+      }
+      target.hidden = true;
+      return;
+    }
+    const priority = target.dataset.priority;
+    if (priority) { setPriority(target.dataset.id, Number(priority)); return; }
+    const stage = target.dataset.stage;
+    if (stage) { setStage(target.dataset.id, stage); return; }
+    const moveDir = target.dataset.move;
+    if (moveDir) { move(target.dataset.id, Number(moveDir)); return; }
+    const open = target.dataset.open;
+    if (open) { openLightbox(open); return; }
+    const opt = target.dataset.opt;
+    if (opt) {
+      const box = target.closest("[data-decision]");
+      state.decisions[box.dataset.decision] = opt;
+      save(); renderDecisions(); renderSummary();
+      return;
+    }
+  });
+
+  document.addEventListener("input", (event) => {
+    const id = event.target.dataset.note;
+    if (!id) return;
+    const entry = state.items.find((it) => it.id === id);
+    const item = itemById.get(id);
+    entry.noteEdit = event.target.value === item.note ? "" : event.target.value;
+    save();
+    sizeNote(event.target);
+    const reset = event.target.closest(".card")?.querySelector(".note-reset");
+    if (reset) reset.hidden = !entry.noteEdit;
+  });
+
+  $("#group").addEventListener("change", (event) => {
+    state.group = event.target.value; save(); renderBoard(); renderGroupBrief();
+  });
+  $("#sort").addEventListener("change", (event) => {
+    state.sort = event.target.value; save(); renderBoard();
+  });
+
+  $("#copy").addEventListener("click", () => {
+    const text = orderText();
+    $("#ordertext").value = text;
+    $("#orderdialog").showModal();
+    setTimeout(() => $("#ordertext").select(), 50);
+  });
+  $("#ordercopy").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText($("#ordertext").value);
+      toast("Copied");
+    } catch {
+      $("#ordertext").select();
+      document.execCommand("copy");
+      toast("Copied");
+    }
+  });
+  $("#orderclose").addEventListener("click", () => $("#orderdialog").close());
+  $("#export").addEventListener("click", downloadJSON);
+  $("#import").addEventListener("change", (event) => {
+    const file = event.target.files?.[0];
+    if (file) importJSON(file);
+    event.target.value = "";
+  });
+  $("#reset").addEventListener("click", () => {
+    if (!confirm("Clear every priority, stage and note on this board?")) return;
+    state = seedState();
+    try { localStorage.removeItem(KEY); } catch { /* no-op */ }
+    renderAll();
+    toast("Reset");
+  });
+  $("#dlgclose").addEventListener("click", () => $("#lightbox").close());
+  $("#lightbox").addEventListener("click", (event) => {
+    if (event.target === $("#lightbox")) $("#lightbox").close();
+  });
+  $("#orderdialog").addEventListener("click", (event) => {
+    if (event.target === $("#orderdialog")) $("#orderdialog").close();
+  });
+
+  // Drag and drop reordering
+  let dragged = null;
+  document.addEventListener("dragstart", (event) => {
+    if (!event.target.closest?.(".grab")) return;
+    const card = event.target.closest(".card");
+    if (!card) return;
+    dragged = card.dataset.id;
+    card.classList.add("dragging");
+    event.dataTransfer.effectAllowed = "move";
+  });
+  document.addEventListener("dragend", () => {
+    dragged = null;
+    document.querySelectorAll(".card").forEach((c) => c.classList.remove("dragging", "drop-target"));
+  });
+  document.addEventListener("dragover", (event) => {
+    const card = event.target.closest?.(".card");
+    if (!card || !dragged || card.dataset.id === dragged) return;
+    event.preventDefault();
+    document.querySelectorAll(".drop-target").forEach((c) => c.classList.remove("drop-target"));
+    card.classList.add("drop-target");
+  });
+  document.addEventListener("drop", (event) => {
+    const card = event.target.closest?.(".card");
+    if (!card || !dragged) return;
+    event.preventDefault();
+    if (card.dataset.id === dragged) return;
+    const from = state.items.findIndex((it) => it.id === dragged);
+    const to = state.items.findIndex((it) => it.id === card.dataset.id);
+    const [entry] = state.items.splice(from, 1);
+    state.items.splice(to, 0, entry);
+    state.items.forEach((it, i) => { it.order = i; });
+    state.sort = "manual";
+    dragged = null;
+    save(); renderChrome(); renderBoard();
+  });
+
+  function renderDefinitions() {
+    const grid = $("#definitiongrid");
+    if (!grid) return;
+    grid.innerHTML = (DATA.definitions || [])
+      .map((d) => `<div class="def"><b>${esc(d.term)}</b><p>${esc(d.text)}</p></div>`)
+      .join("");
+  }
+
+  function initPage() {
+    document.title = DATA.title;
+    $("#title").textContent = DATA.title;
+    $("#lead").innerHTML = DATA.lead;
+    $("#legend").innerHTML = DATA.legend;
+    renderDefinitions();
+    const defs = document.querySelector(".definitions");
+    if (defs && window.innerWidth < 700) defs.open = false;
+    if (DATA.back) {
+      const back = $("#backlink");
+      back.href = DATA.back.href;
+      back.textContent = DATA.back.label;
+      back.hidden = false;
+    }
+    if (DATA.subpage) {
+      const link = $("#subpage-link");
+      link.href = DATA.subpage.href;
+      link.textContent = DATA.subpage.label;
+      $("#subpage").hidden = false;
+    }
+    if (!DATA.decisions.length) {
+      document.querySelector(".decisions").hidden = true;
+      $("#decisionblock").hidden = true;
+    }
+    if (!DATA.groups || DATA.groups.length <= 1) {
+      $("#groupwrap").hidden = true;
+    }
+  }
+
+  initPage();
+  renderAll();
+})();
+</script>
+</body>
+</html>

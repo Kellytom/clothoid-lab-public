@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.737658"
+     inkscape:cx="100"
+     inkscape:cy="125"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title>cap-18</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;cap-18&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 6.08097981987e-05,
+      &quot;length&quot;: 368.0659466741699,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: -0.00017465158862810766,
+      &quot;length&quot;: 105.79690359606202,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5,
+  &quot;g1&quot;: true
+}</desc>
+  <g id="annotation-lines">
+    <line x1="8.5815" y1="206.2412" x2="186.1027" y2="206.2412" stroke="#bdbdbd" stroke-width="0.25"/>
+    <line x1="8.5815" y1="206.2412" x2="8.5815" y2="43.8176" stroke="#bdbdbd" stroke-width="0.25"/>
+  </g>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 8.5815,206.2412 C 39.2197 206.2412, 70.1969 206.2263, 99.99 198.3823 C 114.8401 194.4725, 129.173 188.6437, 142.0466 180.2234 C 154.9202 171.803, 166.0927 160.9155, 174.0345 147.6976 C 181.9763 134.4798, 186.385 119.3385, 185.7943 103.881 C 185.2035 88.4238, 179.5674 73.4674, 169.0263 62.0648 C 158.4854 50.6624, 143.7789 43.7755, 128.1801 43.9633 C 112.5819 44.151, 97.7859 51.5413, 89.0166 64.5438 C 79.1671 79.148, 69.2132 93.8936, 56.0576 105.74 C 42.9026 117.5857, 26.5557 126.2412, 8.5815 126.2412"/>
+    <path id="rail-1" d="M 8.5815,201.2412 C 38.7906 201.2412, 69.3388 201.2818, 98.717 193.5471 C 113.0474 189.7741, 126.8859 184.1652, 139.3097 176.039 C 151.5522 168.0314, 162.1951 157.6941, 169.7487 145.1225 C 177.1898 132.738, 181.3516 118.5581, 180.7979 104.072 C 180.2527 89.8061, 175.0866 75.9861, 165.3548 65.4589 C 155.7744 55.0955, 142.4242 48.7921, 128.2403 48.9629 C 114.2828 49.1309, 101.0138 55.6974, 93.1619 67.3395 C 83.0847 82.2814, 72.8617 97.3367, 59.4034 109.4556 C 45.3312 122.1272, 27.7898 131.2412, 8.5815 131.2412"/>
+    <path id="rail-2" d="M 8.5815,211.2412 C 39.6488 211.2412, 71.055 211.1707, 101.263 203.2175 C 116.6329 199.1709, 131.4602 193.1223, 144.7836 184.4078 C 158.2881 175.5747, 169.9902 164.137, 178.3204 150.2728 C 186.7629 136.2217, 191.4185 120.119, 190.7906 103.6901 C 190.1544 87.0414, 184.0483 70.9488, 172.6978 58.6707 C 161.1964 46.2292, 145.1337 38.7588, 128.1199 38.9636 C 110.881 39.1712, 94.5581 47.3852, 84.8713 61.748 C 75.2494 76.0146, 65.5648 90.4505, 52.7118 102.0244 C 46.5314 107.5896, 39.6803 112.4055, 32.0999 115.8603 C 24.7063 119.2299, 16.7261 121.2412, 8.5815 121.2412"/>
+  </g>
+  <g id="annotations">
+    <text x="187.7027" y="204.8412" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">x</text>
+    <text x="10.3815" y="41.2176" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">y</text>
+    <text x="6.9815" y="204.8412" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="end">0</text>
+    <line x1="89.0166" y1="64.5438" x2="103.0166" y2="50.5438" stroke="#9a9a9a" stroke-width="0.2" stroke-dasharray="1.2 1.2"/>
+    <circle cx="89.0166" cy="64.5438" r="1.2" fill="#333333"/>
+    <text x="104.6166" y="49.5438" font-family="Helvetica, Arial, sans-serif" font-size="4" fill="#333333" text-anchor="start">inflection</text>
+  </g>
+</svg>

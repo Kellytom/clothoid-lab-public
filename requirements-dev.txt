@@ -1,0 +1,2 @@
+# Optional: the prebuilt wheel, kept as a second opinion on the wrapper.
+pyclothoids==0.2.0

@@ -1,0 +1,16 @@
+.git
+.gitignore
+.gcloudignore
+.gcloudignore.engine
+.venv
+build
+__pycache__
+*.pyc
+tests
+docs
+exercises
+.github
+web
+clothoid_lab
+out
+*.md

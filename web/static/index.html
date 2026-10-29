@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>clothoid-lab · web mvp</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">⌒</span>
+      <span>clothoid-lab</span>
+      <span class="tag">web mvp</span>
+    </div>
+    <div class="top-note">200 × 250 mm sheet · +y up · 1 unit = 1 mm</div>
+  </header>
+
+  <main class="layout">
+    <aside class="controls">
+      <section class="block">
+        <h2>Start from</h2>
+        <div class="two">
+          <label class="field">
+            <span>Preset</span>
+            <select id="preset"><option value="">—</option></select>
+          </label>
+          <label class="field">
+            <span>Cap</span>
+            <select id="cap"><option value="">—</option></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Sheet</h2>
+        <div class="two">
+          <label class="field">
+            <span>Width <em>mm</em></span>
+            <input id="pagew" type="number" value="200" min="20" step="1">
+          </label>
+          <label class="field">
+            <span>Height <em>mm</em></span>
+            <input id="pageh" type="number" value="250" min="20" step="1">
+          </label>
+        </div>
+        <label class="field">
+          <span>Ribbon width <em>mm</em></span>
+          <input id="width" type="number" value="10" min="0" step="0.5">
+        </label>
+        <p class="hint">Leave the ribbon empty to draw only the centreline.</p>
+      </section>
+
+      <section class="block grow">
+        <div class="block-head">
+          <h2>design.json</h2>
+          <button class="link" id="loadFile" type="button">load file…</button>
+          <input id="file" type="file" accept=".json,application/json" hidden>
+        </div>
+        <textarea id="design" spellcheck="false" aria-label="design JSON"></textarea>
+        <p class="hint">Edit the JSON; the preview redraws. <kbd>⌘</kbd> <kbd>↵</kbd> renders now.</p>
+      </section>
+
+      <section class="block actions">
+        <button class="primary" id="render" type="button">Render</button>
+        <button id="downloadSvg" type="button">SVG</button>
+        <button id="downloadJson" type="button">JSON</button>
+      </section>
+    </aside>
+
+    <section class="stage">
+      <div class="stage-head">
+        <span>Preview</span>
+        <span id="status" class="status">ready</span>
+      </div>
+      <div id="preview" class="paper" aria-live="polite"></div>
+      <div class="report-head">
+        <span>Report</span>
+        <button class="link" id="toggleReport" type="button">hide</button>
+      </div>
+      <pre id="report" class="report"></pre>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

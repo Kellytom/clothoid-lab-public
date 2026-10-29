@@ -1,0 +1,2 @@
+# Nothing is required to run the tool: the wheel is optional.
+# The compiled backend needs only a C++ compiler; see scripts/build-native.sh.

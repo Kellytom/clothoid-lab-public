@@ -1,0 +1,17 @@
+{
+  "name": "maximum-cap",
+  "anchor": {
+    "x": 0,
+    "y": 0,
+    "angle": 0
+  },
+  "segments": [
+    {
+      "kd": -0.0017793852417314466,
+      "length": 59.42305041844278,
+      "kappa0": 0.0
+    }
+  ],
+  "offsets": [],
+  "stroke": 0.5
+}

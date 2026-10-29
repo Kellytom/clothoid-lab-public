@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+*.pyc
+build
+out/*
+!out/caps
+!out/caps/**
+tests
+docs
+.github
+*.md
+!web/README.md

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ogee 120 portrait - clothoid-lab twin</title>
+
+<style>
+  :root { color-scheme: light dark; --ink:#111; --paper:#fff; --muted:#666; --line:#d8d8d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+         background:#f2f1ee; color:var(--ink); }
+  header { padding:18px 24px 8px; }
+  h1 { margin:0 0 2px; font-size:20px; letter-spacing:.01em; }
+  .sub { color:var(--muted); font-size:12px; }
+  main { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:20px; padding:16px 24px 32px; }
+  @media (max-width: 900px) { main { grid-template-columns:1fr; } }
+  .sheet { background:var(--paper); border:1px solid var(--line); border-radius:6px;
+            padding:18px; display:flex; align-items:center; justify-content:center; min-height:60vh; }
+  .sheet svg { width:100%; height:auto; max-height:78vh; }
+  aside { display:flex; flex-direction:column; gap:14px; }
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .stat { border:1px solid var(--line); border-radius:4px; padding:8px 10px; background:var(--paper); }
+  .stat span { display:block; color:var(--muted); font-size:11px; text-transform:uppercase;
+                letter-spacing:.06em; }
+  .stat b { font-size:14px; font-weight:600; }
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+        margin:6px 0 0; }
+  pre { margin:0; background:var(--paper); border:1px solid var(--line); border-radius:4px;
+         padding:10px; overflow:auto; max-height:34vh; font-size:12px; }
+  table { width:100%; border-collapse:collapse; background:var(--paper); font-size:12px;
+           border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  th, td { text-align:right; padding:5px 8px; border-bottom:1px solid var(--line); }
+  th:first-child, td:first-child { text-align:left; }
+  th { color:var(--muted); font-weight:500; font-size:11px; }
+  tr:last-child td { border-bottom:0; }
+  a { color:inherit; }
+  footer { padding:0 24px 24px; color:var(--muted); font-size:11px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>ogee 120 portrait</h1>
+  <div class="sub">page 200mm x 250mm &nbsp;|&nbsp;
+    generated 2026-10-24 23:14:56 &nbsp;|&nbsp; <a href="play.svg">svg</a></div>
+</header>
+<main>
+  <section class="sheet">
+    <svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.737658"
+     inkscape:cx="100"
+     inkscape:cy="125"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title>ogee 120 portrait</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;ogee 120 portrait&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 1.5707963267948966
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 0.0002042771932513333,
+      &quot;length&quot;: 143.19714642767187,
+      &quot;kappa0&quot;: null
+    },
+    {
+      &quot;kd&quot;: -0.0002042771932513333,
+      &quot;length&quot;: 286.39429285534374,
+      &quot;kappa0&quot;: null
+    },
+    {
+      &quot;kd&quot;: 0.0002042771932513333,
+      &quot;length&quot;: 143.19714642767187,
+      &quot;kappa0&quot;: null
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5
+}</desc>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 129.4426,108.0013 C 129.4426 96.0716, 129.4418 84.1079, 127.8824 72.2633 C 126.3231 60.4189, 123.188 48.7317, 117.1888 38.3409 C 111.1898 27.9503, 102.4339 19.2066, 91.2684 14.5817 C 80.1035 9.957, 67.3167 9.9733, 56.7424 16.0783 C 46.1681 22.1834, 39.7607 33.249, 38.1833 45.2304 C 36.6058 57.2124, 39.8001 69.1671, 45.7992 79.5578 C 51.7983 89.9486, 60.3521 98.5072, 69.8301 105.7799 C 79.308 113.0526, 89.6686 119.0352, 100 125 C 110.3314 130.9648, 120.692 136.9474, 130.1699 144.2201 C 139.6479 151.4928, 148.2017 160.0514, 154.2008 170.4422 C 160.1999 180.8329, 163.3942 192.7876, 161.8167 204.7696 C 160.2393 216.751, 153.8319 227.8166, 143.2576 233.9217 C 132.6833 240.0267, 119.8965 240.043, 108.7316 235.4183 C 97.5661 230.7934, 88.8102 222.0497, 82.8112 211.6591 C 76.812 201.2683, 73.6769 189.5811, 72.1176 177.7367 C 70.5582 165.8921, 70.5574 153.9284, 70.5574 141.9987"/>
+    <path id="rail-1" d="M 124.4426,108.0013 C 124.4426 96.2898, 124.4561 84.5442, 122.9252 72.916 C 121.4515 61.7222, 118.5297 50.6633, 112.8587 40.8409 C 107.4098 31.4031, 99.504 23.4049, 89.355 19.2011 C 79.6256 15.171, 68.4711 15.0803, 59.2424 20.4085 C 50.0137 25.7367, 44.5151 35.4421, 43.1405 45.883 C 41.7067 56.7742, 44.6804 67.62, 50.1293 77.0578 C 55.8003 86.8802, 63.9166 94.94, 72.8739 101.8131 C 82.1788 108.953, 92.3575 114.8141, 102.5 120.6699 C 113.0203 126.7438, 123.5627 132.8478, 133.2138 140.2533 C 143.2124 147.9256, 152.2036 156.983, 158.531 167.9422 C 165.0801 179.2858, 168.495 192.3493, 166.7739 205.4223 C 164.9937 218.9443, 157.6776 231.3698, 145.7576 238.2518 C 133.8376 245.1338, 119.4187 245.257, 106.8182 240.0377 C 94.6362 234.9918, 85.0302 225.5026, 78.481 214.1591 C 72.1537 203.1998, 68.8054 190.8845, 67.1604 178.3893 C 65.5725 166.3285, 65.5574 154.1465, 65.5574 141.9987"/>
+    <path id="rail-2" d="M 134.4426,108.0013 C 134.4426 95.8535, 134.4275 83.6715, 132.8396 71.6107 C 131.1946 59.1155, 127.8463 46.8002, 121.519 35.8409 C 114.9698 24.4974, 105.3638 15.0082, 93.1818 9.9623 C 80.5813 4.743, 66.1624 4.8662, 54.2424 11.7482 C 42.3224 18.6302, 35.0063 31.0557, 33.2261 44.5777 C 31.505 57.6507, 34.9199 70.7142, 41.469 82.0578 C 47.7964 93.017, 56.7876 102.0744, 66.7862 109.7467 C 76.4373 117.1522, 86.9797 123.2562, 97.5 129.3301 C 107.6425 135.1859, 117.8212 141.047, 127.1261 148.1869 C 136.0834 155.06, 144.1997 163.1198, 149.8707 172.9422 C 155.3196 182.38, 158.2933 193.2258, 156.8595 204.117 C 155.4849 214.5579, 149.9863 224.2633, 140.7576 229.5915 C 131.5289 234.9197, 120.3744 234.829, 110.645 230.7989 C 100.496 226.5951, 92.5902 218.5969, 87.1413 209.1591 C 81.4703 199.3367, 78.5485 188.2778, 77.0748 177.084 C 75.5439 165.4558, 75.5574 153.7102, 75.5574 141.9987"/>
+  </g>
+</svg>
+
+  </section>
+  <aside>
+    <div class="stats"><div class='stat'><span>page</span><b>200mm x 250mm</b></div>
+<div class='stat'><span>segments</span><b>3</b></div>
+<div class='stat'><span>length</span><b>572.79 mm</b></div>
+<div class='stat'><span>tightest radius</span><b>34.19 mm</b></div>
+<div class='stat'><span>joins</span><b>G2</b></div>
+<div class='stat'><span>backend</span><b>bertolazzi</b></div></div>
+    <h2>Segments</h2>
+    <table>
+      <thead><tr><th>#</th><th>kd</th><th>length</th><th>kappa0</th></tr></thead>
+      <tbody><tr><td>0</td><td>0.00020427719</td><td>143.1971</td><td>inherit</td></tr>
+<tr><td>1</td><td>-0.00020427719</td><td>286.3943</td><td>inherit</td></tr>
+<tr><td>2</td><td>0.00020427719</td><td>143.1971</td><td>inherit</td></tr></tbody>
+    </table>
+    <h2>Design</h2>
+    <pre>{
+  &quot;name&quot;: &quot;ogee 120 portrait&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 1.5707963267948966
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 0.0002042771932513333,
+      &quot;length&quot;: 143.19714642767187,
+      &quot;kappa0&quot;: null
+    },
+    {
+      &quot;kd&quot;: -0.0002042771932513333,
+      &quot;length&quot;: 286.39429285534374,
+      &quot;kappa0&quot;: null
+    },
+    {
+      &quot;kd&quot;: 0.0002042771932513333,
+      &quot;length&quot;: 143.19714642767187,
+      &quot;kappa0&quot;: null
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5
+}</pre>
+  </aside>
+</main>
+<footer>clothoid-lab twin. The SVG above is inline; the page has no external assets.</footer>
+</body>
+</html>

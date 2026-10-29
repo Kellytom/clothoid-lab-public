@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.pyc
+out/*.png
+.timer.json
+build/
+reference/inbox/*
+!reference/inbox/README.md
+.DS_Store
+**/.DS_Store
+reference/theory/*
+!reference/theory/README.md
+node_modules
+
+# photographs of works, kept local; only attributed files are tracked
+reference/*
+!reference/ATTRIBUTION.md
+!reference/README.md
+!reference/manifest.json
+!reference/principles.json
+!reference/air/
+!reference/fire/
+!reference/fleur/
+!reference/acanthus/
+!reference/palmette/
+!reference/scroll/
+
+# local deploy notes (scrubbed from the public docs)
+LOCAL-DEPLOY.md

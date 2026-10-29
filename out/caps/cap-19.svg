@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.737658"
+     inkscape:cx="100"
+     inkscape:cy="125"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title>cap-19</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;cap-19&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 6.08097981987e-05,
+      &quot;length&quot;: 363.57246224977763,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: -0.00016436267278099997,
+      &quot;length&quot;: 103.33115006178176,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5,
+  &quot;g1&quot;: true
+}</desc>
+  <g id="annotation-lines">
+    <line x1="8.8605" y1="206.6298" x2="186.3838" y2="206.6298" stroke="#bdbdbd" stroke-width="0.25"/>
+    <line x1="8.8605" y1="206.6298" x2="8.8605" y2="44.1994" stroke="#bdbdbd" stroke-width="0.25"/>
+  </g>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 8.8605,206.6298 C 39.1263 206.6298, 69.7109 206.616, 99.1817 199.0535 C 113.8735 195.2834, 128.0788 189.6611, 140.909 181.5243 C 153.7391 173.3875, 164.9658 162.8504, 173.1324 149.9973 C 181.2989 137.1444, 186.1127 122.3509, 186.1256 107.0774 C 186.1385 91.8039, 181.2792 76.8148, 171.5221 64.9911 C 161.7652 53.1677, 147.7533 45.4475, 132.3886 44.4552 C 117.0244 43.4629, 101.8803 49.4366, 91.9904 61.3388 C 80.9928 74.574, 69.903 87.9122, 56.234 98.4794 C 42.5655 109.0462, 26.3498 116.6298, 8.8605 116.6298"/>
+    <path id="rail-1" d="M 8.8605,201.6298 C 38.7076 201.6298, 68.8736 201.6689, 97.939 194.2104 C 112.1228 190.5706, 125.8437 185.1579, 138.2311 177.3019 C 150.4401 169.559, 161.1401 159.5481, 168.9122 147.3159 C 176.5702 135.2633, 181.1135 121.3985, 181.1256 107.0731 C 181.1376 92.9625, 176.6827 79.1004, 167.6656 68.1735 C 158.7869 57.4143, 146.0542 50.3482, 132.0664 49.4448 C 118.2983 48.5556, 104.7037 53.8623, 95.836 64.5343 C 84.6048 78.0507, 73.2503 91.6443, 59.2921 102.4351 C 44.7488 113.6782, 27.4556 121.6298, 8.8605 121.6298"/>
+    <path id="rail-2" d="M 8.8605,211.6298 C 39.5449 211.6298, 70.5481 211.5632, 100.4245 203.8965 C 115.6242 199.9961, 130.3138 194.1644, 143.5868 185.7468 C 157.0382 177.2161, 168.7916 166.1526, 177.3526 152.6788 C 186.0276 139.0255, 191.1119 123.3034, 191.1256 107.0816 C 191.1395 90.6454, 185.8758 74.5292, 175.3786 61.8087 C 164.7435 48.9211, 149.4524 40.5468, 132.7108 39.4656 C 115.7504 38.3702, 99.0569 45.0109, 88.1447 58.1434 C 77.3808 71.0974, 66.5556 84.1801, 53.1759 94.5236 C 40.3821 104.4142, 25.2442 111.6298, 8.8605 111.6298"/>
+  </g>
+  <g id="annotations">
+    <text x="187.9838" y="205.2298" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">x</text>
+    <text x="10.6605" y="41.5994" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">y</text>
+    <text x="7.2605" y="205.2298" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="end">0</text>
+    <line x1="91.9904" y1="61.3388" x2="105.9904" y2="47.3388" stroke="#9a9a9a" stroke-width="0.2" stroke-dasharray="1.2 1.2"/>
+    <circle cx="91.9904" cy="61.3388" r="1.2" fill="#333333"/>
+    <text x="107.5904" y="46.3388" font-family="Helvetica, Arial, sans-serif" font-size="4" fill="#333333" text-anchor="start">inflection</text>
+  </g>
+</svg>

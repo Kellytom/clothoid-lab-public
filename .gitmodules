@@ -1,0 +1,3 @@
+[submodule "vendor/Clothoids"]
+	path = vendor/Clothoids
+	url = https://github.com/ebertolazzi/Clothoids

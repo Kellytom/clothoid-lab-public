@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.737658"
+     inkscape:cx="100"
+     inkscape:cy="125"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title>maximum-cap</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;maximum-cap&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: -0.0017793852417314466,
+      &quot;length&quot;: 59.42305041844278,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5
+}</desc>
+  <g id="annotation-lines">
+    <line x1="80.6266" y1="145" x2="102.8498" y2="145" stroke="#000000" stroke-width="0.5"/>
+    <line x1="80.6266" y1="140" x2="102.8498" y2="140" stroke="#000000" stroke-width="0.5"/>
+    <line x1="80.6266" y1="135" x2="102.8498" y2="135" stroke="#000000" stroke-width="0.5"/>
+  </g>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 80.6266,110 C 85.5753 110, 90.5559 110.0011, 95.4252 110.9696 C 100.2944 111.9382, 105.012 113.8974, 108.557 117.4424 C 112.1016 120.987, 114.1439 125.9486, 113.1495 130.9477 C 112.1554 135.9454, 108.0702 140, 102.8498 140"/>
+    <path id="rail-1" d="M 80.6266,105 C 85.9026 105, 91.2104 105.0333, 96.4006 106.0657 C 102.2391 107.227, 107.8488 109.6631, 112.0925 113.9069 C 116.8171 118.6315, 119.3734 125.2873, 118.0534 131.9232 C 116.5943 139.2589, 110.454 145, 102.8498 145"/>
+    <path id="rail-2" d="M 80.6266,115 C 85.2481 115, 89.9014 114.9688, 94.4497 115.8736 C 98.35 116.6494, 102.175 118.1315, 105.0214 120.9779 C 107.3868 123.3433, 108.9146 126.6088, 108.2456 129.9723 C 107.9683 131.3663, 107.3029 132.6672, 106.2448 133.6261 C 105.3117 134.4719, 104.1169 135, 102.8498 135"/>
+  </g>
+</svg>

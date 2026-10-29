@@ -1,0 +1,44 @@
+name: native
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    name: Linux shared library
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out with submodules
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Python for the tests
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Build libclothoidlab.so
+        run: bash scripts/build-native.sh
+
+      - name: Check the binary
+        run: |
+          file build/libclothoidlab.so
+          ls -lh build/libclothoidlab.so
+
+      - name: Run the tests
+        run: python -m unittest discover tests
+
+      - name: Upload the .so
+        uses: actions/upload-artifact@v4
+        with:
+          name: libclothoidlab-linux-x86_64
+          path: build/libclothoidlab.so
+          if-no-files-found: error
+          retention-days: 90

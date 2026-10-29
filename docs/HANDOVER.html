@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>clothoid-lab handover</title>
+<style>
+  :root {
+    --paper: #f4f0e6;
+    --ink: #1d1d18;
+    --muted: #6d685b;
+    --line: #d8d1c1;
+    --accent: #b23a2b;
+    --good: #2f6f4e;
+    --warn: #8a5a16;
+    --code: #fbf9f3;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1100px 500px at 12% -8%, #fcf9ef 0, transparent 60%),
+      var(--paper);
+    color: var(--ink);
+    font: 15px/1.6 var(--sans);
+  }
+  main { max-width: 1040px; margin: 0 auto; padding: 42px 24px 70px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 26px; }
+  h1 { font-size: 34px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.02em; }
+  h2 { font-size: 19px; margin: 38px 0 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  h3 { font-size: 15px; margin: 24px 0 8px; }
+  p { margin: 10px 0; }
+  .meta { color: var(--muted); font: 12px/1.5 var(--mono); }
+  .badge {
+    display: inline-block; font: 11px/1 var(--mono); letter-spacing: .08em;
+    text-transform: uppercase; color: var(--accent); border: 1px solid currentColor;
+    border-radius: 3px; padding: 5px 6px 4px; margin-right: 8px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: rgba(255,254,249,.7); border: 1px solid var(--line); border-radius: 5px; padding: 14px 16px; }
+  .card h3 { margin-top: 0; }
+  .card.good { border-left: 4px solid var(--good); }
+  .card.warn { border-left: 4px solid var(--warn); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 13px; }
+  th, td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: 8px 10px; }
+  th { font: 600 11px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  tr:last-child td { border-bottom: 0; }
+  code { font: 12px/1.5 var(--mono); background: var(--code); border: 1px solid var(--line); border-radius: 3px; padding: 1px 4px; }
+  pre { background: var(--code); border: 1px solid var(--line); border-radius: 5px; padding: 13px 15px; overflow: auto; }
+  pre code { background: none; border: 0; padding: 0; white-space: pre; }
+  ul, ol { margin: 8px 0 8px 22px; padding: 0; }
+  li { margin: 5px 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .url { font: 13px/1.5 var(--mono); overflow-wrap: anywhere; }
+  .note { color: var(--muted); font-size: 13px; }
+  .check { list-style: none; margin-left: 0; }
+  .check li::before { content: "☐ "; color: var(--muted); }
+  footer { margin-top: 42px; border-top: 1px solid var(--line); padding-top: 14px; color: var(--muted); font: 11px/1.5 var(--mono); }
+  @media (max-width: 760px) {
+    main { padding: 26px 16px 50px; }
+    h1 { font-size: 27px; }
+    .grid { grid-template-columns: 1fr; }
+    table { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div><span class="badge">handover</span><span class="meta">updated 2026-10-25 · latest commit in repository</span></div>
+  <h1>clothoid-lab</h1>
+  <p class="meta">Local MVP + public remote MVP · exact clothoids · 200 × 250 mm sheet · +y up</p>
+</header>
+
+<div class="grid">
+  <div class="card good">
+    <h3>Local MVP</h3>
+    <p class="url"><a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+    <p class="note">Python + macOS <code>.dylib</code>. Start with <code>.venv/bin/python web/server.py</code>.</p>
+  </div>
+  <div class="card good">
+    <h3>Remote MVP</h3>
+    <p class="url"><a href="https://<your-service>.run.app">https://<your-service>.run.app</a></p>
+    <p class="note">Cloud Run, Linux container. Project-number alias: <code>https://<your-service>-<project-number>.us-central1.run.app</code>.</p>
+  </div>
+</div>
+
+<h2>Status</h2>
+<p>Both MVPs are live. The remote home page and render endpoint were smoke-tested: HTTP 200, about <strong>0.69 s over the network</strong> and <strong>0.37 s server-side</strong> for a test render. The result was G2 and inside tolerance.</p>
+
+<h3>Google Cloud resources</h3>
+<table>
+  <tr><th>Item</th><th>Value</th></tr>
+  <tr><td>Account</td><td><code>kelly.aquinas.tom@gmail.com</code></td></tr>
+  <tr><td>Project</td><td><code><your-gcp-project></code></td></tr>
+  <tr><td>Region</td><td><code>us-central1</code></td></tr>
+  <tr><td>Cloud Run service</td><td><code>clothoid-web</code></td></tr>
+  <tr><td>Current revision</td><td><code>clothoid-web-00002-wsp</code></td></tr>
+  <tr><td>Runtime</td><td>Linux, Python 3.12, Debian slim</td></tr>
+  <tr><td>Image repository</td><td><code>us-central1-docker.pkg.dev/<your-gcp-project>/cloud-run-source-deploy/clothoid-web</code></td></tr>
+  <tr><td>Min / max instances</td><td><code>0</code> / <code>1</code></td></tr>
+  <tr><td>Concurrency</td><td><code>2</code></td></tr>
+  <tr><td>CPU / memory</td><td><code>1 vCPU</code> / <code>512 MiB</code></td></tr>
+  <tr><td>Request timeout</td><td><code>60 s</code></td></tr>
+  <tr><td>Authentication</td><td>Public, unauthenticated</td></tr>
+  <tr><td>Budget guardrail</td><td><code>clothoid-lab guardrail</code>, <strong>$1/month</strong>, alerts 50/90/100%</td></tr>
+</table>
+
+<h2>What the MVP is</h2>
+<p>A deliberately small web harness around the existing geometry engine:</p>
+<ul>
+  <li><code>web/server.py</code> — Python standard-library HTTP server; no FastAPI, no requirements, no database.</li>
+  <li><code>web/static/</code> — plain HTML/CSS/JS page.</li>
+  <li><code>/api/render</code> — accepts design JSON, width, page, tolerance and split; calls <code>clothoid_lab.cli.render</code>; returns SVG, report, summary info and elapsed milliseconds.</li>
+  <li><code>/api/presets</code>, <code>/api/caps</code>, <code>/api/cap</code> — four presets and the existing cap families.</li>
+  <li>The native engine is reached through <code>ctypes</code> (<code>clothoid_lab/backend/bertolazzi.py</code>).</li>
+  <li>The page loads presets/caps, edits design JSON, previews SVG, downloads SVG/JSON, and shows the report.</li>
+</ul>
+<p>Design semantics are unchanged: millimetres at 1:1, <strong>+y up</strong>, standard <strong>200 × 250 mm</strong> sheet, 10 mm ribbon (5 mm each side) where selected, 0.5 mm cap stroke. The SVG writer flips at output; design and JSON remain y-up.</p>
+<p>Class I caps are <code>cap-1</code> … <code>cap-27</code>; class II leaves are <code>cap-pt-1</code> … <code>cap-pt-9</code>. In the UI, class II caps intentionally clear the ribbon width: constant rails on a two-edge leaf put a diamond at its point.</p>
+<p>Tests: <strong>96 pass</strong>, including four web tests in <code>tests/test_web.py</code>.</p>
+
+<h2>Local versus remote</h2>
+<table>
+  <tr><th>Capability</th><th>Local Mac</th><th>Cloud Run</th></tr>
+  <tr><td>Run Python</td><td>yes</td><td>yes</td></tr>
+  <tr><td>Run native C++</td><td>yes, <code>.dylib</code></td><td>yes, <code>.so</code> in image</td></tr>
+  <tr><td>Compile C++</td><td>yes, locally</td><td>only in Cloud Build</td></tr>
+  <tr><td>Edit source, see immediately</td><td>yes</td><td>no; rebuild/redeploy</td></tr>
+  <tr><td>Interactive shell / SSH</td><td>yes</td><td>no</td></tr>
+  <tr><td>Persistent local files</td><td>yes</td><td>no; read-only image, ephemeral <code>/tmp</code></td></tr>
+  <tr><td>Background daemons</td><td>yes</td><td>no; request driven</td></tr>
+  <tr><td>Public HTTPS</td><td>no, unless tunneled</td><td>yes</td></tr>
+  <tr><td>Arbitrary TCP/UDP</td><td>yes</td><td>no; HTTP(S) on <code>$PORT</code></td></tr>
+  <tr><td>Install OS packages at runtime</td><td>yes</td><td>no; must be in image</td></tr>
+  <tr><td>Docker inside runtime</td><td>no local Docker</td><td>no Docker-in-container</td></tr>
+  <tr><td>Scale</td><td>one Mac</td><td>0 → 1 instance</td></tr>
+  <tr><td>Cost</td><td>electricity</td><td>free allowance, then pay-as-you-go</td></tr>
+  <tr><td>Availability</td><td>dies when Mac sleeps</td><td>available while service exists</td></tr>
+  <tr><td>State</td><td>filesystem</td><td>stateless; no DB or disk</td></tr>
+</table>
+
+<h3>Local</h3>
+<pre><code>cd /Users/thomaskelly/developer/clothoid-lab
+.venv/bin/python web/server.py
+open http://127.0.0.1:8000/</code></pre>
+<p class="note">Uses the locally built <code>build/libclothoidlab.dylib</code>. The original session's server was still running on port 8000.</p>
+
+<h3>Remote</h3>
+<p>Cloud Run runs the same Python server in Linux. The build is split:</p>
+<ol>
+  <li><strong>Engine base</strong> (<code>engine/Dockerfile</code>, built by <code>cloudbuild.engine.yaml</code>): Debian bookworm installs <code>clang</code> and compiles vendored Clothoids and <code>csrc/</code> into <code>libclothoidlab.so</code>; the runtime is <code>python:3.12-slim</code> plus <code>libstdc++6</code> and that <code>.so</code>. Rebuild only when <code>vendor/</code>, <code>csrc/</code>, or <code>scripts/build-native.sh</code> changes.</li>
+  <li><strong>App image</strong> (root <code>Dockerfile</code>): starts FROM the engine base and copies <code>clothoid_lab/</code>, <code>web/</code>, and <code>out/caps/</code>. Every UI or Python change rebuilds only this thin layer.</li>
+  <li>Process listens on <code>$PORT</code> (<code>8080</code>) with <code>HOST=0.0.0.0</code>.</li>
+</ol>
+<p>An app-only <code>.gcloudignore</code> drops <code>vendor/</code>, <code>csrc/</code>, <code>scripts/</code>, and <code>engine/</code>, so an app deploy uploads about 100 files and never runs the compiler. A first thin deploy took 30 seconds; the engine base took 6m43s once.</p>
+<p>The Linux <code>.so</code> is deliberately built inside Debian bookworm. A downloaded Ubuntu 24.04 artifact requires glibc 2.38 and will <strong>not</strong> run on the Debian bookworm runtime; do not substitute it without changing the base.</p>
+
+<h2>Local/remote parity</h2>
+<p>The local and remote apps are the same app at the same level: same <code>web/</code> code, same 36 caps, same presets, and the same rendered result.</p>
+<p><code>scripts/check-parity.py</code> verifies:</p>
+<ul>
+  <li><code>index.html</code>, <code>app.js</code>, <code>style.css</code> are byte-identical;</li>
+  <li><code>/api/presets</code> and <code>/api/caps</code> match;</li>
+  <li>a <code>cap-14</code> render produces the same SVG and report on both.</li>
+</ul>
+<pre><code>.venv/bin/python scripts/check-parity.py</code></pre>
+<p>The last check passed all seven comparisons. The two native libraries differ only by platform (Mach-O <code>.dylib</code> locally, ELF <code>.so</code> remotely); the output is identical at the app’s precision.</p>
+
+<h2>The limiting factor</h2>
+<div class="card warn">
+  <p><strong>It is not “Cloud Run cannot run Python, binaries, or C++.”</strong> It can. The limits are the runtime shape and the free allowance.</p>
+</div>
+<ol>
+  <li><strong>Stateless, request-driven container.</strong> No persistent disk, daemon, background process, or shell. State belongs in a database, bucket, or client.</li>
+  <li><strong>One small instance.</strong> 1 vCPU, 512 MiB, concurrency 2, 60-second timeout. Rendering is ~0.37 s, so this is comfortable for this tool, not for batch or heavy CPU work.</li>
+  <li><strong>Cold starts at min 0.</strong> First request after idle is roughly 1–3 seconds; later requests are warm.</li>
+  <li><strong>Public unauthenticated endpoint.</strong> Anyone with the URL can spend the free allowance. That is the biggest practical risk.</li>
+  <li><strong>Build, not runtime.</strong> C++ is compiled by Cloud Build; the deployed container cannot compile, install, or mutate itself.</li>
+  <li><strong>Large source context.</strong> The ~240 MB vendored Clothoids tree is uploaded for a build, so deploys are slower than a small Python app.</li>
+</ol>
+
+<h3>Do we need a faster/paid tier for a few days?</h3>
+<p><strong>No.</strong> Cloud Run is the same service; the free tier is a usage allowance, not a slower plan. Warm renders are already sub-second. The only useful speed purchase for a demo is <strong>min instances = 1</strong> to remove cold starts; it costs a few dollars if left running, then set it back to 0. More CPU or memory is not justified for a 0.37 s render.</p>
+
+<h2>Cloud Build versus Cloud Run</h2>
+<table>
+  <tr><th>Cloud Build</th><th>Cloud Run</th></tr>
+  <tr><td>Builds the Docker image</td><td>Runs the container</td></tr>
+  <tr><td>Compiles the C++ engine for Linux</td><td>Never compiles</td></tr>
+  <tr><td>Ephemeral build machine</td><td>Long-lived HTTP service</td></tr>
+  <tr><td>Pushes image to Artifact Registry</td><td>Pulls and serves image</td></tr>
+  <tr><td>Free build-minutes allowance (commonly 120/day; verify)</td><td>Free request/CPU/memory allowance (2M requests, 180k vCPU-s, 360k GiB-s/month, commonly)</td></tr>
+  <tr><td>No local Docker required</td><td>No SSH, persistent disk, or arbitrary ports</td></tr>
+</table>
+
+<h2>Lock-in: low</h2>
+<p>The application is a standard OCI container. The only Google-specific pieces are the project, billing, Cloud Build, Artifact Registry, and the service configuration. The code imports no Google SDK and reads only the standard <code>PORT</code> environment variable.</p>
+<p>To move to Fly.io, Render, Railway, a VPS, Kubernetes, or another container host:</p>
+<ol>
+  <li>Build the same <code>Dockerfile</code> there.</li>
+  <li>Run it with <code>PORT</code> set to the host’s expected port and <code>HOST=0.0.0.0</code>.</li>
+  <li>Point the host at the container.</li>
+</ol>
+<p>The URL and IAM/billing plumbing change; the engine, UI, and tests do not. There is no database or proprietary data store to migrate. The commercial attachment is to the Google account/billing setup, not the code.</p>
+<pre><code>gcloud run services delete clothoid-web --region us-central1
+# Optional and destructive: removes the whole project.
+gcloud projects delete <your-gcp-project></code></pre>
+<p>Deleting the service stops runtime charges. The $1 budget is only an alert; it does <strong>not</strong> shut the service down.</p>
+
+<h2>Free-tier controls</h2>
+<ul>
+  <li><code>min-instances=0</code> — scales to zero.</li>
+  <li><code>max-instances=1</code> — one instance ceiling while public.</li>
+  <li><code>concurrency=2</code>.</li>
+  <li><code>cpu=1</code>, <code>memory=512Mi</code>, <code>timeout=60s</code>.</li>
+  <li><code>$1/month</code> budget with 50/90/100% alerts.</li>
+</ul>
+<p>Typical free allowances, to verify against current pricing: Cloud Run 2M requests, 180k vCPU-seconds, 360k GiB-seconds per month; Cloud Build 120 build-minutes/day standard; Artifact Registry 0.5 GB. Normal phone testing fits easily. The risk is sharing the unauthenticated URL widely.</p>
+
+<h2>Repository map</h2>
+<table>
+  <tr><th>Path</th><th>Purpose</th></tr>
+  <tr><td><code>web/server.py</code></td><td>stdlib HTTP server, render API, preset/cap endpoints</td></tr>
+  <tr><td><code>web/static/index.html</code></td><td>MVP page</td></tr>
+  <tr><td><code>web/static/app.js</code></td><td>fetch/render/editor/download logic</td></tr>
+  <tr><td><code>web/static/style.css</code></td><td>page styling</td></tr>
+  <tr><td><code>web/README.md</code></td><td>local and container usage</td></tr>
+  <tr><td><code>Dockerfile</code></td><td>thin app image; starts FROM the engine base</td></tr>
+  <tr><td><code>engine/Dockerfile</code></td><td>engine base: C++ build + Python runtime + <code>.so</code></td></tr>
+  <tr><td><code>cloudbuild.engine.yaml</code></td><td>build and push the engine base</td></tr>
+  <tr><td><code>.dockerignore</code></td><td>local Docker build context</td></tr>
+  <tr><td><code>.gcloudignore</code></td><td>small app-only Cloud Build upload</td></tr>
+  <tr><td><code>.gcloudignore.engine</code></td><td>engine-base build context</td></tr>
+  <tr><td><code>scripts/check-parity.py</code></td><td>local/remote parity smoke test</td></tr>
+  <tr><td><code>tests/test_web.py</code></td><td>web API tests</td></tr>
+  <tr><td><code>tests/test_auth.py</code></td><td>token auth and rate-limit tests</td></tr>
+  <tr><td><code>clothoid_lab/</code></td><td>existing geometry/policy layer</td></tr>
+  <tr><td><code>clothoid_lab/piece.py</code></td><td>Piece/Trace multi-trace model and renderer</td></tr>
+  <tr><td><code>docs/piece-model.html</code></td><td>W01 visual proof: traces, rails, mirror</td></tr>
+  <tr><td><code>out/caps/</code></td><td>existing cap SVG/JSON, baked into remote image</td></tr>
+  <tr><td><code>docs/HANDOVER.md</code></td><td>durable Markdown handover</td></tr>
+  <tr><td><code>docs/HANDOVER.html</code></td><td>this browser-readable mirror</td></tr>
+  <tr><td><code>docs/HANDOFF.md</code></td><td>compact current-session continuation brief</td></tr>
+  <tr><td><code>docs/BACKLOG.md</code></td><td>execution detail for W01–W26</td></tr>
+  <tr><td><code>docs/ornament-board.html</code></td><td>visual board: 85 plates, 26 work, 11 decisions</td></tr>
+  <tr><td><code>docs/fleur-studies.html</code></td><td>subpage: the twenty fleur studies, P01–P20</td></tr>
+  <tr><td><code>scripts/board/</code></td><td>board generator, template, extractors and README</td></tr>
+  <tr><td><code>next-fhandoff.md</code></td><td>two-line focused handoff pointer</td></tr>
+  <tr><td><code>.opencode/commands/fhandoff.md</code></td><td>focused handoff command</td></tr>
+  <tr><td><code>.opencode/commands/fhandon.md</code></td><td>focused handon command</td></tr>
+  <tr><td><code>.opencode/commands/morsel.md</code></td><td>do the next backlog item</td></tr>
+</table>
+<p class="note"><code>out/play-template.svg</code> is an untracked user file; leave it alone.</p>
+
+<h2>Update and deploy</h2>
+<h3>Local loop</h3>
+<pre><code>cd /Users/thomaskelly/developer/clothoid-lab
+.venv/bin/python -m unittest discover tests
+.venv/bin/python web/server.py</code></pre>
+<h3>Remote deploy</h3>
+<pre><code>cd /Users/thomaskelly/developer/clothoid-lab
+gcloud config set project <your-gcp-project>
+
+# engine base — only when vendor/, csrc/, or scripts/build-native.sh changes
+gcloud builds submit --config cloudbuild.engine.yaml \
+  --ignore-file=.gcloudignore.engine .
+
+# app — every UI/Python change (thin upload, no compiler)
+gcloud run deploy clothoid-web \
+  --source . \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --memory 512Mi --cpu 1 --concurrency 2 \
+  --min-instances 0 --max-instances 1 \
+  --timeout 60 --port 8080 \
+  --set-env-vars HOST=0.0.0.0 \
+  --quiet</code></pre>
+<pre><code>gcloud run services describe clothoid-web --region us-central1 \
+  --format='value(status.url,status.latestReadyRevisionName)'</code></pre>
+<p>The remote service does not see local edits until redeployed. The cap list is baked into the image; adding a cap JSON requires a rebuild.</p>
+
+<h2>Security and operations</h2>
+<ul>
+  <li>Every route except <code>/health</code> requires HTTP Basic auth with a shared token. The username is ignored; the password is the token. The token lives in Secret Manager as <code>clothoid-token</code> and is mounted as <code>CLOTHOID_TOKEN</code>; the local copy is <code>~/.config/<app>/token</code>, outside the repo.</li>
+  <li><code>/health</code> is public and returns <code>{"ok": true}</code>. <code>/healthz</code> is intercepted by Google's frontend and is not used.</li>
+  <li>Bodies are bounded at 1 MB and designs at 200 segments. <code>POST /api/render</code> is limited to 60 requests/minute, burst 20, per client address; excess returns 429 with <code>Retry-After</code>. The limiter is in-process and resets on a cold start.</li>
+  <li>No accounts, roles or saved designs; the shared token is the whole access model. Rotate it with a new Secret Manager version and a redeploy.</li>
+  <li>No secrets or service-account keys are in the repository or image.</li>
+  <li>Logs and metrics are in the Google Cloud console.</li>
+  <li>The budget is an alert only. Delete the service to guarantee zero runtime spend.</li>
+</ul>
+
+<h2>Known issues and next steps</h2>
+<ol>
+  <li><strong>Accounts and roles are still absent.</strong> The shared token gates the URL (W11) and a per-address render limit guards the allowance (W12), but there are no named users, saved designs or audit trail. Keep the token private and rotate it if it leaks.</li>
+  <li><strong>Cold starts</strong> with min 0; use min 1 only for a demo window.</li>
+  <li><strong>Large build upload (fixed for app deploys).</strong> The vendored C++ tree is uploaded only when rebuilding the engine base. App deploys are thin. The Debian build is deliberate: the Ubuntu 24.04 artifact needs glibc 2.38 and will not run on Debian bookworm.</li>
+  <li><strong>Static caps:</strong> new <code>out/caps/*.json</code> files need an app deploy (thin), not an engine rebuild.</li>
+  <li><strong>Class II width:</strong> UI clears ribbon width for <code>cap-pt-*</code>; do not add rails at the point.</li>
+  <li><strong>Platform libraries differ:</strong> local Mach-O <code>.dylib</code>, remote ELF <code>.so</code>.</li>
+  <li><strong>Mobile polish</strong> is responsive CSS only; not yet a phone-first editor.</li>
+  <li><strong>No accounts, saved designs, sharing, or database.</strong> This is an MVP.</li>
+</ol>
+
+<h2>Continuation commands</h2>
+<p>Two <strong>project-scoped, focused</strong> OpenCode commands make the next session cheap to start. They are modelled on the existing <code>handoff</code>/<code>handon</code> pattern in <code>grid-8</code> and <code>ornaments</code>, but they carry only one action:</p>
+<ul>
+  <li><strong><code>/fhandoff [focus]</code></strong> — squares the record in <code>docs/HANDOFF.md</code>, chooses one focused action, writes <code>next-fhandoff.md</code> with a two-line pointer, and commits only the handoff files.</li>
+  <li><strong><code>/fhandon</code></strong> — reads <code>next-fhandoff.md</code>, follows its doc pointers, performs that single action, and stops. The operator runs <code>/fhandoff</code> when it is time to put the work down again.</li>
+</ul>
+<p>They live in <code>.opencode/commands/</code> and are available when OpenCode is opened in this repository. They are <strong>not global</strong>, so they do not appear in the other projects. The <code>grid-8</code> and <code>ornaments</code> commands were not touched.</p>
+
+<h2>Handoff checklist</h2>
+<ul class="check">
+  <li>Open OpenCode in <code>clothoid-lab</code> and start the next session with <code>/fhandon</code>.</li>
+  <li>Open the remote URL on the phone; load a class I cap and a <code>cap-pt</code> leaf.</li>
+  <li>Confirm the $1 budget alert email reaches the billing admin.</li>
+  <li>Run <code>git log -1</code> and <code>git status</code>; commit/push MVP and handover files.</li>
+  <li>Run <code>.venv/bin/python -m unittest discover tests</code> (expect 96 pass).</li>
+  <li>Run <code>.venv/bin/python scripts/check-parity.py</code> (expect <code>PARITY OK</code>).</li>
+  <li>Keep the public URL private; auth/rate limiting is deferred.</li>
+  <li>Keep <code>out/play-template.svg</code> untouched.</li>
+</ul>
+
+<footer>
+  clothoid-lab · handover mirror of <code>docs/HANDOVER.md</code> · generated for the next session
+</footer>
+</main>
+</body>
+</html>

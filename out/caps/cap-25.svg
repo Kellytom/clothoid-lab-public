@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.737658"
+     inkscape:cx="100"
+     inkscape:cy="125"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title>cap-25</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;cap-25&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 6.08097981987e-05,
+      &quot;length&quot;: 329.2891193767034,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: -2.426334126760575e-05,
+      &quot;length&quot;: 113.12449158720447,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5,
+  &quot;g1&quot;: true
+}</desc>
+  <g id="annotation-lines">
+    <line x1="8.2656" y1="206.9849" x2="185.7806" y2="206.9849" stroke="#bdbdbd" stroke-width="0.25"/>
+    <line x1="8.2656" y1="206.9849" x2="8.2656" y2="44.5188" stroke="#bdbdbd" stroke-width="0.25"/>
+  </g>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 8.2656,206.9849 C 35.687 206.9849, 63.3025 206.978, 90.2391 201.3478 C 117.1749 195.7176, 143.181 184.3162, 162.0718 163.8989 C 171.4225 153.7927, 178.6091 141.8143, 182.4611 128.5668 C 186.3131 115.3194, 186.6681 101.2331, 182.7972 87.9558 C 178.9264 74.6786, 170.9696 62.8725, 159.6602 54.8421 C 148.3509 46.8119, 134.4141 43.1566, 120.6641 45.3086 C 83.4245 51.137, 46.0345 56.9849, 8.2656 56.9849"/>
+    <path id="rail-1" d="M 8.2656,201.9849 C 35.3435 201.9849, 62.6157 202.0135, 89.2161 196.4535 C 115.1363 191.0357, 140.2156 180.1589, 158.4017 160.5033 C 167.2253 150.9667, 174.0247 139.673, 177.66 127.1708 C 181.2465 114.8363, 181.6018 101.7199, 177.9971 89.3553 C 174.4415 77.1596, 167.1562 66.2971, 156.7654 58.9189 C 146.5194 51.6436, 133.899 48.2981, 121.4373 50.2485 C 83.942 56.1169, 46.2933 61.9849, 8.2656 61.9849"/>
+    <path id="rail-2" d="M 8.2656,211.9849 C 36.0304 211.9849, 63.9894 211.9425, 91.2621 206.242 C 119.2136 200.3996, 146.1464 188.4735, 165.7419 167.2946 C 175.6196 156.6187, 183.1936 143.9556, 187.2623 129.9628 C 191.3797 115.8025, 191.7344 100.7464, 187.5974 86.5564 C 183.4112 72.1976, 174.7829 59.448, 162.555 50.7653 C 150.1825 41.9801, 134.9293 38.0151, 119.891 40.3688 C 82.907 46.1572, 45.7757 51.9849, 8.2656 51.9849"/>
+  </g>
+  <g id="annotations">
+    <text x="187.3806" y="205.5849" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">x</text>
+    <text x="10.0656" y="41.9188" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">y</text>
+    <text x="6.6656" y="205.5849" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="end">0</text>
+    <line x1="120.6641" y1="45.3086" x2="134.6641" y2="31.3086" stroke="#9a9a9a" stroke-width="0.2" stroke-dasharray="1.2 1.2"/>
+    <circle cx="120.6641" cy="45.3086" r="1.2" fill="#333333"/>
+    <text x="136.2641" y="30.3086" font-family="Helvetica, Arial, sans-serif" font-size="4" fill="#333333" text-anchor="start">inflection</text>
+  </g>
+</svg>

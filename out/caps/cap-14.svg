@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.737658"
+     inkscape:cx="100"
+     inkscape:cy="125"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title>cap-14</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;cap-14&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0,
+    &quot;angle&quot;: 0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 6.08097981987e-05,
+      &quot;length&quot;: 382.21096928128605,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: -0.00016596801158101483,
+      &quot;length&quot;: 125.16805356554048,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5,
+  &quot;g1&quot;: true
+}</desc>
+  <g id="annotation-lines">
+    <line x1="7.971" y1="207.503" x2="185.4813" y2="207.503" stroke="#bdbdbd" stroke-width="0.25"/>
+    <line x1="7.971" y1="207.503" x2="7.971" y2="45.1032" stroke="#bdbdbd" stroke-width="0.25"/>
+  </g>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 7.971,207.503 C 39.7809 207.503, 72.0002 207.4835, 102.79 198.7095 C 118.1291 194.3384, 132.8439 187.8285, 145.8083 178.4825 C 158.7726 169.1366, 169.6992 157.1163, 176.8198 142.7576 C 183.9403 128.3991, 186.9247 112.2224, 184.2945 96.3529 C 181.6644 80.4837, 173.4832 65.9168, 160.5528 56.2265 C 147.6229 46.5365, 131.0391 42.722, 115.3362 46.884 C 99.634 51.0458, 86.8671 62.8379, 82.4962 78.5893 C 76.9279 98.6555, 71.2416 119.0706, 59.4533 136.4612 C 53.5884 145.1132, 46.3127 152.7929, 37.4815 158.4384 C 28.6504 164.0839, 18.4933 167.503, 7.971 167.503"/>
+    <path id="rail-1" d="M 7.971,202.503 C 39.3182 202.503, 71.0749 202.5482, 101.4197 193.901 C 116.2013 189.6887, 130.3903 183.4336, 142.8844 174.4266 C 155.1887 165.5564, 165.5812 154.166, 172.3404 140.5362 C 178.9946 127.1179, 181.8204 112.0046, 179.3618 97.1705 C 176.9423 82.5718, 169.4541 69.1456, 157.5543 60.2276 C 145.8483 51.4549, 130.8416 47.947, 116.6172 51.7171 C 102.6308 55.4242, 91.2104 65.8853, 87.3141 79.9262 C 81.601 100.5145, 75.6843 121.4277, 63.5921 139.2666 C 57.346 148.4811, 49.5782 156.6397, 40.1746 162.6512 C 30.5395 168.8107, 19.4477 172.503, 7.971 172.503"/>
+    <path id="rail-2" d="M 7.971,212.503 C 40.2436 212.503, 72.9255 212.4189, 104.1602 203.5181 C 120.0569 198.9881, 135.2976 192.2235, 148.7322 182.5385 C 162.3565 172.7167, 173.8172 160.0666, 181.2992 144.979 C 188.886 129.6803, 192.029 112.4402, 189.2272 95.5354 C 186.3865 78.3956, 177.5123 62.6881, 163.5514 52.2254 C 149.3974 41.6181, 131.2367 37.497, 114.0552 42.0509 C 96.6371 46.6675, 82.5238 59.7904, 77.6782 77.2523 C 72.2548 96.7966, 66.799 116.7135, 55.3146 133.6557 C 49.8309 141.7454, 43.0472 148.9461, 34.7884 154.2257 C 26.7614 159.3572, 17.539 162.503, 7.971 162.503"/>
+  </g>
+  <g id="annotations">
+    <text x="187.0813" y="206.103" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">x</text>
+    <text x="9.771" y="42.5032" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">y</text>
+    <text x="6.371" y="206.103" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="end">0</text>
+    <line x1="82.4962" y1="78.5893" x2="96.4962" y2="64.5893" stroke="#9a9a9a" stroke-width="0.2" stroke-dasharray="1.2 1.2"/>
+    <circle cx="82.4962" cy="78.5893" r="1.2" fill="#333333"/>
+    <text x="98.0962" y="63.5893" font-family="Helvetica, Arial, sans-serif" font-size="4" fill="#333333" text-anchor="start">inflection</text>
+  </g>
+</svg>

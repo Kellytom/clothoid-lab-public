@@ -1,0 +1,92 @@
+[
+ {
+  "subject": "air",
+  "file": "air/01-Cumulus_cloud_above_Lechtaler_Alps_at_tannheim__Austria.jpg",
+  "title": "File:Cumulus cloud above Lechtaler Alps at tannheim, Austria.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cumulus_cloud_above_Lechtaler_Alps_at_tannheim,_Austria.jpg",
+  "licence": "CC BY-SA 2.0 de",
+  "artist": "Glg",
+  "bytes": 134466
+ },
+ {
+  "subject": "air",
+  "file": "air/02-Cumulus_clouds_panorama.jpg",
+  "title": "File:Cumulus clouds panorama.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cumulus_clouds_panorama.jpg",
+  "licence": "GFDL 1.2",
+  "artist": "Fir0002",
+  "bytes": 68247
+ },
+ {
+  "subject": "fire",
+  "file": "fire/01-FIRE_01.JPG",
+  "title": "File:FIRE 01.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:FIRE_01.JPG",
+  "licence": "CC BY-SA 3.0",
+  "artist": "MarcusObal",
+  "bytes": 167042
+ },
+ {
+  "subject": "fleur",
+  "file": "fleur/01-Fleur-de-Lis.jpg",
+  "title": "File:Fleur-de-Lis.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Fleur-de-Lis.jpg",
+  "licence": "CC BY 4.0",
+  "artist": "Miguel Angel Oma\u00f1a Rojas",
+  "bytes": 581298
+ },
+ {
+  "subject": "acanthus",
+  "file": "acanthus/01-Alexis_Peyrotte_-_Acanthus_Leaf_Design_-_Google_Art_Project.jpg",
+  "title": "File:Alexis Peyrotte - Acanthus Leaf Design - Google Art Project.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Alexis_Peyrotte_-_Acanthus_Leaf_Design_-_Google_Art_Project.jpg",
+  "licence": "Public domain",
+  "artist": "Alexis Peyrotte (1699 - 1769) Details on Google Art Project",
+  "bytes": 419042
+ },
+ {
+  "subject": "acanthus",
+  "file": "acanthus/02-Acanthus_Leaf_Furniture_Element_LACMA_M.80.203.124.jpg",
+  "title": "File:Acanthus Leaf Furniture Element LACMA M.80.203.124.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Acanthus_Leaf_Furniture_Element_LACMA_M.80.203.124.jpg",
+  "licence": "Public domain",
+  "artist": "",
+  "bytes": 171395
+ },
+ {
+  "subject": "palmette",
+  "file": "palmette/01-Handbook_of_ornament__a_grammar_of_art__industrial_and_architectural_designing_i.jpg",
+  "title": "File:Handbook of ornament; a grammar of art, industrial and architectural designing in all its branches, for practical as well as theoretical use (1900) (14597671860).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Handbook_of_ornament;_a_grammar_of_art,_industrial_and_architectural_designing_in_all_its_branches,_for_practical_as_well_as_theoretical_use_(1900)_(14597671860).jpg",
+  "licence": "No restrictions",
+  "artist": "Internet Archive Book Images",
+  "bytes": 413226
+ },
+ {
+  "subject": "palmette",
+  "file": "palmette/02-Orna105-Stirnziege.png",
+  "title": "File:Orna105-Stirnziege.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Orna105-Stirnziege.png",
+  "licence": "Public domain",
+  "artist": "Franz Sales Meyer",
+  "bytes": 1425833
+ },
+ {
+  "subject": "scroll",
+  "file": "scroll/01-Cambados__San_Benito_07-01b.jpg",
+  "title": "File:Cambados, San Benito 07-01b.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cambados,_San_Benito_07-01b.jpg",
+  "licence": "CC BY-SA 4.0",
+  "artist": "Lameiro",
+  "bytes": 313346
+ },
+ {
+  "subject": "scroll",
+  "file": "scroll/02-3D_Model_Volute_Krater.stl.jpg",
+  "title": "File:3D Model Volute Krater.stl",
+  "page": "https://commons.wikimedia.org/wiki/File:3D_Model_Volute_Krater.stl",
+  "licence": "CC BY-SA 4.0",
+  "artist": "Noedlh",
+  "bytes": 55868
+ }
+]

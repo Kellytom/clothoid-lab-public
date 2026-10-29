@@ -1,0 +1,184 @@
+[
+ {
+  "id": "earth",
+  "name": "Earth",
+  "class": "primal",
+  "gesture": "Rises in strata, each shelf flatter than the one below. Weight sits at the foot and leaves through edges that cut, not through curves. The eye should read stacked horizontal pressure, not a shape.",
+  "numbers": {
+   "proportion": "1 : 1.6 (width : height)",
+   "width_to_length": "1 : 8",
+   "max_turn_per_unit": "35\u00b0 at a corner, 0\u00b0 along a stratum"
+  },
+  "not_this": [
+   "a mountain outline",
+   "a leaf",
+   "a zigzag"
+  ],
+  "refs": [
+   "earth/01-Cliff_beach_North_Stradbroke_Island.jpg",
+   "earth/02-Cliff_beach_North_Stradbroke_Island.jpg"
+  ],
+  "check": {
+   "segments": 4,
+   "max_segment_turn_deg": 0.5,
+   "max_corner_deg": 35,
+   "terminal": "taper"
+  }
+ },
+ {
+  "id": "water",
+  "name": "Water",
+  "class": "primal",
+  "gesture": "A long sweep that folds back once and settles. Width is nearly constant; the gesture lives in the direction, not the thickness. A single drop may swell the line, but only one.",
+  "numbers": {
+   "proportion": "1 : 3 (height : length)",
+   "width_to_length": "1 : 12",
+   "turn_per_sweep": "\u2264 90\u00b0"
+  },
+  "not_this": [
+   "a wave icon",
+   "three identical waves",
+   "a splash"
+  ],
+  "refs": [
+   "water/01-Wave_cloud_sunset.jpg",
+   "water/02-Wave_cloud_sunset.jpg"
+  ],
+  "check": {
+   "segments": 3,
+   "max_segment_turn_deg": 90,
+   "terminal": "round"
+  }
+ },
+ {
+  "id": "air",
+  "name": "Air (cloud)",
+  "class": "primal",
+  "gesture": "Billows of falling radius, each one leaning the same way, closed by round ends. Nothing sharp: the silhouette is a sequence of domes, and the last is the smallest.",
+  "numbers": {
+   "proportion": "1 : 1.2",
+   "width_to_length": "1 : 6",
+   "billow_turn": "120\u00b0 \u2013 180\u00b0 per billow"
+  },
+  "not_this": [
+   "a cloud icon",
+   "a scalloped border",
+   "smoke"
+  ],
+  "refs": [
+   "air/01-Cumulus_clouds.jpg",
+   "air/02-Cumulus_clouds.jpg"
+  ],
+  "check": {
+   "segments": 3,
+   "max_segment_turn_deg": 180,
+   "terminal": "round"
+  }
+ },
+ {
+  "id": "fire",
+  "name": "Fire",
+  "class": "primal",
+  "gesture": "Rises fast, then falls to a point. Curvature climbs to a maximum and is released; one corner is allowed, a smooth return is not. The tip is the design, not the base.",
+  "numbers": {
+   "proportion": "1 : 2.5",
+   "width_to_length": "1 : 10",
+   "tip_turn": "\u2264 25\u00b0 at the point"
+  },
+  "not_this": [
+   "a candle flame",
+   "a leaf",
+   "a tear drop"
+  ],
+  "refs": [
+   "fire/01-Flame.jpg",
+   "fire/02-Flame.jpg"
+  ],
+  "check": {
+   "segments": 2,
+   "max_segment_turn_deg": 95,
+   "max_corner_deg": 10,
+   "terminal": "point"
+  }
+ },
+ {
+  "id": "fleur",
+  "name": "Fleur-de-lis",
+  "class": "archetype",
+  "gesture": "A central lance between two petals that bow outward and return, bound by a band and closed by a foot. Symmetry is exact; the band is the only horizontal.",
+  "numbers": {
+   "proportion": "1 : 2.2",
+   "width_to_length": "1 : 7",
+   "band_height": "\u2264 8% of total height"
+  },
+  "not_this": [
+   "a lily",
+   "a crown",
+   "a spearhead"
+  ],
+  "refs": [
+   "fleur/01-Fleur_de_lis.jpg",
+   "fleur/02-Fleur_de_lis.jpg"
+  ]
+ },
+ {
+  "id": "acanthus",
+  "name": "Acanthus",
+  "class": "archetype",
+  "gesture": "A stem of lobes that alternate and overlap, each lobe curling under the next. Depth comes from overlap, not shading; the leaf narrows toward the tip and widens at the base.",
+  "numbers": {
+   "proportion": "1 : 1.4",
+   "width_to_length": "1 : 5",
+   "lobe_turn": "60\u00b0 \u2013 90\u00b0 per lobe"
+  },
+  "not_this": [
+   "a fern",
+   "a maple leaf",
+   "a scroll"
+  ],
+  "refs": [
+   "acanthus/01-Acanthus_leaf.jpg",
+   "acanthus/02-Acanthus_leaf.jpg"
+  ]
+ },
+ {
+  "id": "palmette",
+  "name": "Palmette",
+  "class": "archetype",
+  "gesture": "A fan of leaves rising from one point, the centre leaf tallest and each neighbour shorter. The spacing is regular; the outer leaves bend away hardest.",
+  "numbers": {
+   "proportion": "1 : 1.8",
+   "width_to_length": "1 : 9",
+   "leaf_count": "5 \u2013 9 leaves, 12\u00b0 \u2013 20\u00b0 apart"
+  },
+  "not_this": [
+   "a sunburst",
+   "a peacock tail",
+   "a tree"
+  ],
+  "refs": [
+   "palmette/01-Palmette.jpg",
+   "palmette/02-Palmette.jpg"
+  ]
+ },
+ {
+  "id": "scroll",
+  "name": "Scroll (volute)",
+  "class": "archetype",
+  "gesture": "A spiral that tightens without closing and leaves on its own tangent. The eye is a counter, not an ink shape; the line never crosses itself.",
+  "numbers": {
+   "proportion": "1 : 1",
+   "width_to_length": "1 : 8",
+   "spiral_turn": "540\u00b0 total, radius halving each half-turn"
+  },
+  "not_this": [
+   "a spiral icon",
+   "a snail shell",
+   "a hook"
+  ],
+  "refs": [
+   "scroll/01-Volute.jpg",
+   "scroll/02-Volute.jpg"
+  ]
+ }
+]

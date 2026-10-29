@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>closed-cl-1 - clothoid-lab twin</title>
+
+<style>
+  :root { color-scheme: light dark; --ink:#111; --paper:#fff; --muted:#666; --line:#d8d8d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+         background:#f2f1ee; color:var(--ink); }
+  header { padding:18px 24px 8px; }
+  h1 { margin:0 0 2px; font-size:20px; letter-spacing:.01em; }
+  .sub { color:var(--muted); font-size:12px; }
+  main { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:20px; padding:16px 24px 32px; }
+  @media (max-width: 900px) { main { grid-template-columns:1fr; } }
+  .sheet { background:var(--paper); border:1px solid var(--line); border-radius:6px;
+            padding:18px; display:flex; align-items:center; justify-content:center; min-height:60vh; }
+  .sheet svg { width:100%; height:auto; max-height:78vh; }
+  aside { display:flex; flex-direction:column; gap:14px; }
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .stat { border:1px solid var(--line); border-radius:4px; padding:8px 10px; background:var(--paper); }
+  .stat span { display:block; color:var(--muted); font-size:11px; text-transform:uppercase;
+                letter-spacing:.06em; }
+  .stat b { font-size:14px; font-weight:600; }
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+        margin:6px 0 0; }
+  pre { margin:0; background:var(--paper); border:1px solid var(--line); border-radius:4px;
+         padding:10px; overflow:auto; max-height:34vh; font-size:12px; }
+  table { width:100%; border-collapse:collapse; background:var(--paper); font-size:12px;
+           border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  th, td { text-align:right; padding:5px 8px; border-bottom:1px solid var(--line); }
+  th:first-child, td:first-child { text-align:left; }
+  th { color:var(--muted); font-weight:500; font-size:11px; }
+  tr:last-child td { border-bottom:0; }
+  a { color:inherit; }
+  footer { padding:0 24px 24px; color:var(--muted); font-size:11px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>closed-cl-1</h1>
+  <div class="sub">page 200mm x 250mm &nbsp;|&nbsp;
+    generated 2026-10-24 23:14:56 &nbsp;|&nbsp; <a href="closed-cl-1.svg">svg</a></div>
+</header>
+<main>
+  <section class="sheet">
+    <svg xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="200mm" height="250mm"
+     viewBox="0 0 200 250">
+  <title>closed-cl-1</title>
+  <desc id="clothoid-lab-design">{
+  &quot;name&quot;: &quot;closed-cl-1&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0.0,
+    &quot;y&quot;: 0.0,
+    &quot;angle&quot;: 0.0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 6.080979819873281e-05,
+      &quot;length&quot;: 391.51618295437663,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: -0.00012541226858277528,
+      &quot;length&quot;: 155.64197039484415,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5,
+  &quot;g1&quot;: true
+}</desc>
+  <g id="annotation-lines">
+    <line x1="7.8381" y1="207.5027" x2="185.3381" y2="207.5027" stroke="#bdbdbd" stroke-width="0.25"/>
+    <line x1="7.8381" y1="207.5027" x2="7.8381" y2="45.1206" stroke="#bdbdbd" stroke-width="0.25"/>
+  </g>
+  <g id="clothoid" fill="none" stroke="#000000" stroke-linecap="round"
+     stroke-width="0.5">
+    <path id="spine" d="M 7.8381,207.5027 C 40.4182 207.5027, 73.4601 207.4796, 104.8899 198.0565 C 120.5422 193.3637, 135.4906 186.3799, 148.4743 176.3986 C 161.458 166.4173, 172.1567 153.6298, 178.6394 138.5349 C 185.122 123.4401, 187.0446 106.6452, 182.9677 90.6625 C 178.8909 74.6802, 168.9784 60.6299, 154.593 52.3934 C 140.2082 44.1572, 122.7229 42.7144, 107.5433 49.6154 C 92.3645 56.5159, 81.7374 70.9873, 80.8685 87.7545 C 79.5292 113.5976, 78.1171 140.062, 67.1618 163.8533 C 61.7214 175.6681, 54.0209 186.4162, 43.7429 194.4685 C 33.4652 202.5207, 20.9645 207.5027, 7.8381 207.5027"/>
+    <path id="rail-1" d="M 7.8381,202.5027 C 39.9328 202.5027, 72.4892 202.5509, 103.454 193.2671 C 118.5234 188.749, 132.9256 182.045, 145.4269 172.4345 C 157.7334 162.9738, 167.8995 150.8719, 174.0452 136.5618 C 180.0929 122.4797, 181.9273 106.8131, 178.1229 91.8984 C 174.3805 77.2271, 165.3198 64.2967, 152.1086 56.7325 C 139.119 49.2952, 123.3286 47.9315, 109.6126 54.1671 C 96.1334 60.295, 86.6341 73.1105, 85.8618 88.0133 C 85.1825 101.1221, 84.4943 114.2501, 82.5739 127.2451 C 80.6072 140.5539, 77.3427 153.6979, 71.7034 165.9446 C 65.9306 178.4813, 57.7301 189.862, 46.8266 198.4044 C 35.6689 207.1459, 22.0823 212.5027, 7.8381 212.5027"/>
+    <path id="rail-2" d="M 7.8381,212.5027 C 40.9037 212.5027, 74.431 212.4084, 106.3259 202.8458 C 122.561 197.9783, 138.0556 190.7148, 151.5217 180.3626 C 165.1825 169.8607, 176.4139 156.3876, 183.2336 140.5079 C 190.1512 124.4005, 192.1619 106.4773, 187.8126 89.4267 C 183.4014 72.1333, 172.637 56.9631, 157.0774 48.0543 C 141.2973 39.0193, 122.1172 37.4973, 105.474 45.0636 C 88.5956 52.7369, 76.8407 68.864, 75.8752 87.4958 C 75.2122 100.2886, 74.5555 113.1012, 72.6813 125.7832 C 70.8536 138.1515, 67.8618 150.3789, 62.6202 161.762 C 57.5121 172.8549, 50.3117 182.9705, 40.6593 190.5326 C 31.2614 197.8955, 19.8469 202.5027, 7.8381 202.5027"/>
+  </g>
+  <g id="annotations">
+    <text x="186.9381" y="206.1027" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">x</text>
+    <text x="9.6381" y="42.5206" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="start">y</text>
+    <text x="6.2381" y="206.1027" font-family="Helvetica, Arial, sans-serif" font-size="3.5" fill="#7a7a7a" text-anchor="end">0</text>
+    <line x1="80.8685" y1="87.7545" x2="92.8685" y2="75.7545" stroke="#9a9a9a" stroke-width="0.2" stroke-dasharray="1.2 1.2"/>
+    <circle cx="80.8685" cy="87.7545" r="1.2" fill="#333333"/>
+    <text x="94.4685" y="74.7545" font-family="Helvetica, Arial, sans-serif" font-size="4" fill="#333333" text-anchor="start">inflection</text>
+  </g>
+</svg>
+
+  </section>
+  <aside>
+    <div class="stats"><div class='stat'><span>page</span><b>200mm x 250mm</b></div>
+<div class='stat'><span>segments</span><b>2</b></div>
+<div class='stat'><span>length</span><b>547.16 mm</b></div>
+<div class='stat'><span>tightest radius</span><b>42.27 mm</b></div>
+<div class='stat'><span>joins</span><b>G1, jump 2.38e-02 1/mm</b></div>
+<div class='stat'><span>backend</span><b>bertolazzi</b></div></div>
+    <h2>Segments</h2>
+    <table>
+      <thead><tr><th>#</th><th>kd</th><th>length</th><th>kappa0</th></tr></thead>
+      <tbody><tr><td>0</td><td>6.0809798e-05</td><td>391.5162</td><td>0</td></tr>
+<tr><td>1</td><td>-0.00012541227</td><td>155.6420</td><td>0</td></tr></tbody>
+    </table>
+    <h2>Design</h2>
+    <pre>{
+  &quot;name&quot;: &quot;closed-cl-1&quot;,
+  &quot;anchor&quot;: {
+    &quot;x&quot;: 0.0,
+    &quot;y&quot;: 0.0,
+    &quot;angle&quot;: 0.0
+  },
+  &quot;segments&quot;: [
+    {
+      &quot;kd&quot;: 6.080979819873281e-05,
+      &quot;length&quot;: 391.51618295437663,
+      &quot;kappa0&quot;: 0.0
+    },
+    {
+      &quot;kd&quot;: -0.00012541226858277528,
+      &quot;length&quot;: 155.64197039484415,
+      &quot;kappa0&quot;: 0.0
+    }
+  ],
+  &quot;offsets&quot;: [],
+  &quot;stroke&quot;: 0.5,
+  &quot;g1&quot;: true
+}</pre>
+  </aside>
+</main>
+<footer>clothoid-lab twin. The SVG above is inline; the page has no external assets.</footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+{
+ "peak_tolerance": 0.03,
+ "canvas": [
+  0.0,
+  0.0,
+  120.0,
+  80.0
+ ],
+ "versions": {
+  "v1": {
+   "target_peak": 0.85,
+   "veil": 0.4031,
+   "billows": 248,
+   "layers": {
+    "haze": 0.0564,
+    "bank": 0.1371,
+    "billow": 0.1854,
+    "crown": 0.2419,
+    "shade": 0.0484,
+    "light": 0.0645
+   },
+   "panels": [
+    {
+     "row": "top",
+     "side": "left",
+     "pattern": "Siemens star",
+     "box": [
+      14.0,
+      32.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.4639,
+     "p95": 0.7422,
+     "max": 0.7936
+    },
+    {
+     "row": "top",
+     "side": "right",
+     "pattern": "grey step wedge",
+     "box": [
+      68.0,
+      32.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.3062,
+     "p95": 0.7401,
+     "max": 0.8262
+    },
+    {
+     "row": "bottom",
+     "side": "left",
+     "pattern": "colour bars",
+     "box": [
+      14.0,
+      8.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.4428,
+     "p95": 0.632,
+     "max": 0.6978
+    },
+    {
+     "row": "bottom",
+     "side": "right",
+     "pattern": "chequer + cross",
+     "box": [
+      68.0,
+      8.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.3243,
+     "p95": 0.6144,
+     "max": 0.7219
+    }
+   ]
+  },
+  "v2": {
+   "target_peak": 0.85,
+   "veil": 0.5938,
+   "billows": 306,
+   "layers": {
+    "haze": 0.0594,
+    "bank": 0.0534,
+    "billow": 0.1781,
+    "crown": 0.2494,
+    "shade": 0.0831,
+    "light": 0.1069
+   },
+   "panels": [
+    {
+     "row": "top",
+     "side": "left",
+     "pattern": "Siemens star",
+     "box": [
+      14.0,
+      32.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.309,
+     "p95": 0.6258,
+     "max": 0.7195
+    },
+    {
+     "row": "top",
+     "side": "right",
+     "pattern": "grey step wedge",
+     "box": [
+      68.0,
+      32.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.2127,
+     "p95": 0.5588,
+     "max": 0.6859
+    },
+    {
+     "row": "bottom",
+     "side": "left",
+     "pattern": "colour bars",
+     "box": [
+      14.0,
+      8.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.3173,
+     "p95": 0.4997,
+     "max": 0.6009
+    },
+    {
+     "row": "bottom",
+     "side": "right",
+     "pattern": "chequer + cross",
+     "box": [
+      68.0,
+      8.0,
+      38.0,
+      16.0
+     ],
+     "mean": 0.1708,
+     "p95": 0.4419,
+     "max": 0.5264
+    }
+   ]
+  }
+ },
+ "v2_lighter_than_v1": true
+}

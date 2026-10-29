@@ -1,0 +1,20 @@
+{
+  "name": "clothoid-lab",
+  "version": "1.0.0",
+  "description": "Numerical clothoid chains, out as plain editable SVG.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "check-web": "node scripts/check-web.mjs",
+    "shot": "node scripts/shot.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clothoid-lab"
+version = "0.1.0"
+description = "Numerical clothoid chains out as plain editable SVG"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+wheel = ["pyclothoids==0.2.0"]
+
+[project.scripts]
+clothoid-lab = "clothoid_lab.cli:main"
+
+[tool.setuptools]
+packages = ["clothoid_lab", "clothoid_lab.backend"]
